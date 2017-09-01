@@ -1,11 +1,11 @@
 # IS_TP1_2017
-Ingenieria del Software - 2017 - 4K2 - Trabajo Practico N°1: "El Operador Turismo"
+Ingenieria del Software - 2017 - 4K2 - Trabajo Practico N°1: "El Operador Turistico"
 
 1. INTRODUCCIÓN 
 1.1. Objetivo 
     El propósito de este documento es encontrar, definir y analizar las necesidades de alto nivel y las características para el nuevo sistema del Operador Turístico. Mediante el documento visión se determinarán los requisitos funcionales del nuevo sistema. Se prevé una aplicación capaz de gestionar los procesos administrativos de la organización. Se trata de una empresa que gestiona los paquetes turísticos que serán comercializados por la red de agencias de turismo.
 
-2. ORIENTACIÓN 
+2. ORIENTACIÓN
 2.1. Oportunidades de Negocio 
     Se trata de un producto a medida especialmente desarrollado para El Operador Turístico, aunque podría servir para cualquier empresa en el mismo rubro.
 
@@ -33,7 +33,7 @@ Ingenieria del Software - 2017 - 4K2 - Trabajo Practico N°1: "El Operador Turis
     Para que los paquetes puedan ser comercializados deben crearse las salidas. Una salida es, en definitiva, un paquete en una determinada fecha y para la cual se establece una cantidad de cupos disponibles. Por lo tanto, los servicios definidos en el paquete son los que se ejecutarán como parte de la salida, aunque en ese caso al servicio se le define un cupo (que puede ser diferente al de la salida), un precio y pueden presentar características especiales, por ejemplo: para los que son transporte se tiene una ciudad de origen y otra de destino, para los de alojamiento, el hotel se encuentra en una ciudad y tiene una cantidad (1-6) de estrellas. 
  
     Lo servicios, incluidos en la salida, son proporcionados por diferentes empresas o personas físicas (conocidas como los prestadores). Por ejemplo, una noche de hotel se ofrece en el Hotel Sheraton, que pertenece a la empresa Sheraton Argentina S.A.  
- 
+    
     Similar a lo que ocurre con el paquete, al crear una salida se establece en el estado Creada, luego de definir toda la información requerida (ver requerimientos específicos) puede pasar al estado En Venta. Cuando llega la fecha de la salida (y se encuentre En Venta) pasa al estado En Ejecución. En cualquier momento se puede desactivar la salida estableciendo su estado En Pausa (siempre y cuando se encuentre En Venta). Mientras está pausada puede ser editada. Cuando se cumple el plazo de ejecución pasa al estado Finalizada (si se encuentra En Ejecución). Los paquetes no definen precios, pero si las salidas. Estos precios se determinan según la base en la que se comercialicen. La base es la tarifa que se establece según la cantidad de personas que viajan juntas y comparten la misma habitación. Las únicas bases que se manejan son: Simple, Doble, Triple, Cuádruple y Quíntuple. 
  
     A tener en cuenta para la primera iteración: 
