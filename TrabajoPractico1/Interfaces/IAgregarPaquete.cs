@@ -8,5 +8,7 @@ namespace TrabajoPractico1.Interfaces
 {
     interface IAgregarPaquete
     {
+        void CargarTablaDestino();
+        void CargarTablaServicio();
     }
 }

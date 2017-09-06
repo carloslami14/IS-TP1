@@ -15,7 +15,11 @@ namespace TrabajoPractico1.Vista
         public VAgregarSalida()
         {
             InitializeComponent();
-            Show();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

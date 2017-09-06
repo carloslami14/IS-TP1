@@ -16,5 +16,10 @@ namespace TrabajoPractico1.Vista
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

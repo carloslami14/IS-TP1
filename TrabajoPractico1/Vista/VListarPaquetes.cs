@@ -15,7 +15,11 @@ namespace TrabajoPractico1.Vista
         public VListarPaquetes()
         {
             InitializeComponent();
-            Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

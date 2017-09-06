@@ -42,13 +42,14 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbNoches = new System.Windows.Forms.ComboBox();
+            this.cbDias = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -57,9 +58,10 @@
             this.label12 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.cbDesde = new System.Windows.Forms.ComboBox();
+            this.cbHasta = new System.Windows.Forms.ComboBox();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -73,6 +75,7 @@
             this.button2.TabIndex = 51;
             this.button2.Text = "Agregar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label11
             // 
@@ -133,6 +136,7 @@
             this.button1.TabIndex = 42;
             this.button1.Text = "Agregar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBox4
             // 
@@ -176,6 +180,10 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(151, 60);
             this.textBox4.TabIndex = 37;
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(TrabajoPractico1.Modelo.Paquete);
             // 
             // label6
             // 
@@ -222,23 +230,23 @@
             this.label4.TabIndex = 32;
             this.label4.Text = "Descripcion";
             // 
-            // comboBox2
+            // cbNoches
             // 
-            this.comboBox2.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.bindingSource1, "cantNoches", true));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(151, 109);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(51, 21);
-            this.comboBox2.TabIndex = 31;
+            this.cbNoches.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.bindingSource1, "cantNoches", true));
+            this.cbNoches.FormattingEnabled = true;
+            this.cbNoches.Location = new System.Drawing.Point(151, 109);
+            this.cbNoches.Name = "cbNoches";
+            this.cbNoches.Size = new System.Drawing.Size(51, 21);
+            this.cbNoches.TabIndex = 31;
             // 
-            // comboBox1
+            // cbDias
             // 
-            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.bindingSource1, "cantDias", true));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(151, 67);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(51, 21);
-            this.comboBox1.TabIndex = 30;
+            this.cbDias.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.bindingSource1, "cantDias", true));
+            this.cbDias.FormattingEnabled = true;
+            this.cbDias.Location = new System.Drawing.Point(151, 67);
+            this.cbDias.Name = "cbDias";
+            this.cbDias.Size = new System.Drawing.Size(51, 21);
+            this.cbDias.TabIndex = 30;
             // 
             // label3
             // 
@@ -277,6 +285,7 @@
             // comboBox6
             // 
             this.comboBox6.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.bindingSource1, "origen", true));
+            this.comboBox6.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "origen", true));
             this.comboBox6.FormattingEnabled = true;
             this.comboBox6.Location = new System.Drawing.Point(360, 26);
             this.comboBox6.Name = "comboBox6";
@@ -309,40 +318,58 @@
             this.label13.TabIndex = 52;
             this.label13.Text = "Nombre";
             // 
-            // bindingSource1
+            // cbDesde
             // 
-            this.bindingSource1.DataSource = typeof(TrabajoPractico1.Modelo.Paquete);
-            // 
-            // comboBox7
-            // 
-            this.comboBox7.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.bindingSource1, "cantDias", true));
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Items.AddRange(new object[] {
+            this.cbDesde.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.bindingSource1, "cantDias", true));
+            this.cbDesde.FormattingEnabled = true;
+            this.cbDesde.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
             "5"});
-            this.comboBox7.Location = new System.Drawing.Point(325, 322);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(51, 21);
-            this.comboBox7.TabIndex = 56;
+            this.cbDesde.Location = new System.Drawing.Point(325, 322);
+            this.cbDesde.Name = "cbDesde";
+            this.cbDesde.Size = new System.Drawing.Size(51, 21);
+            this.cbDesde.TabIndex = 56;
             // 
-            // comboBox8
+            // cbHasta
             // 
-            this.comboBox8.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.bindingSource1, "cantDias", true));
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(470, 322);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(51, 21);
-            this.comboBox8.TabIndex = 57;
+            this.cbHasta.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.bindingSource1, "cantDias", true));
+            this.cbHasta.FormattingEnabled = true;
+            this.cbHasta.Location = new System.Drawing.Point(470, 322);
+            this.cbHasta.Name = "cbHasta";
+            this.cbHasta.Size = new System.Drawing.Size(51, 21);
+            this.cbHasta.TabIndex = 57;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(458, 530);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 58;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(357, 530);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 59;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // VAgregarPaquete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(563, 535);
-            this.Controls.Add(this.comboBox8);
-            this.Controls.Add(this.comboBox7);
+            this.ClientSize = new System.Drawing.Size(573, 565);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.cbHasta);
+            this.Controls.Add(this.cbDesde);
             this.Controls.Add(this.comboBox6);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.textBox7);
@@ -365,8 +392,8 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbNoches);
+            this.Controls.Add(this.cbDias);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
@@ -375,6 +402,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Paquete";
+            this.Load += new System.EventHandler(this.VAgregarPaquete_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
@@ -403,8 +431,8 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbNoches;
+        private System.Windows.Forms.ComboBox cbDias;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
@@ -414,7 +442,9 @@
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.ComboBox cbDesde;
+        private System.Windows.Forms.ComboBox cbHasta;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnGuardar;
     }
 }

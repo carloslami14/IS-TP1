@@ -8,5 +8,6 @@ namespace TrabajoPractico1.Interfaces
 {
     interface IAgregarSalida
     {
+
     }
 }

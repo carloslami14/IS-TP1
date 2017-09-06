@@ -19,6 +19,8 @@ namespace TrabajoPractico1.Modelo
         public List<ServicioPaquete> serviciosPaquete { get; set; }
         public List<PasoFronterizo> pasoFronterizo { get; set; }
 
+        public Paquete() { }
+
         public Paquete(string nombre, string descripcion, string itinerario, string cc, int cantDias, int cantNoches, Ciudad origen, List<Ciudad> destino, List<ServicioPaquete> servicioPaquete, List<PasoFronterizo> pasoFronterizo)
         {
             this.nombre = nombre;
