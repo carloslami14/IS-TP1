@@ -62,9 +62,19 @@
             this.cbHasta = new System.Windows.Forms.ComboBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.serviciosPaqueteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.destinoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.provinciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.desdeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hastaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.servicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviciosPaqueteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.destinoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -97,10 +107,16 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(293, 388);
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.desdeDataGridViewTextBoxColumn,
+            this.hastaDataGridViewTextBoxColumn,
+            this.servicioDataGridViewTextBoxColumn});
+            this.dataGridView2.DataSource = this.serviciosPaqueteBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(271, 388);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(240, 118);
+            this.dataGridView2.Size = new System.Drawing.Size(354, 118);
             this.dataGridView2.TabIndex = 46;
             // 
             // comboBox5
@@ -122,10 +138,16 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(293, 148);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nombreDataGridViewTextBoxColumn,
+            this.provinciaDataGridViewTextBoxColumn,
+            this.paisDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.destinoBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(274, 148);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 118);
+            this.dataGridView1.Size = new System.Drawing.Size(351, 118);
             this.dataGridView1.TabIndex = 43;
             // 
             // button1
@@ -361,11 +383,57 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // serviciosPaqueteBindingSource
+            // 
+            this.serviciosPaqueteBindingSource.DataMember = "serviciosPaquete";
+            this.serviciosPaqueteBindingSource.DataSource = this.bindingSource1;
+            // 
+            // destinoBindingSource
+            // 
+            this.destinoBindingSource.DataMember = "destino";
+            this.destinoBindingSource.DataSource = this.bindingSource1;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // provinciaDataGridViewTextBoxColumn
+            // 
+            this.provinciaDataGridViewTextBoxColumn.DataPropertyName = "provincia";
+            this.provinciaDataGridViewTextBoxColumn.HeaderText = "Provincia";
+            this.provinciaDataGridViewTextBoxColumn.Name = "provinciaDataGridViewTextBoxColumn";
+            // 
+            // paisDataGridViewTextBoxColumn
+            // 
+            this.paisDataGridViewTextBoxColumn.DataPropertyName = "pais";
+            this.paisDataGridViewTextBoxColumn.HeaderText = "Pais";
+            this.paisDataGridViewTextBoxColumn.Name = "paisDataGridViewTextBoxColumn";
+            // 
+            // desdeDataGridViewTextBoxColumn
+            // 
+            this.desdeDataGridViewTextBoxColumn.DataPropertyName = "desde";
+            this.desdeDataGridViewTextBoxColumn.HeaderText = "Desde";
+            this.desdeDataGridViewTextBoxColumn.Name = "desdeDataGridViewTextBoxColumn";
+            // 
+            // hastaDataGridViewTextBoxColumn
+            // 
+            this.hastaDataGridViewTextBoxColumn.DataPropertyName = "hasta";
+            this.hastaDataGridViewTextBoxColumn.HeaderText = "Hasta";
+            this.hastaDataGridViewTextBoxColumn.Name = "hastaDataGridViewTextBoxColumn";
+            // 
+            // servicioDataGridViewTextBoxColumn
+            // 
+            this.servicioDataGridViewTextBoxColumn.DataPropertyName = "servicio";
+            this.servicioDataGridViewTextBoxColumn.HeaderText = "Servicio";
+            this.servicioDataGridViewTextBoxColumn.Name = "servicioDataGridViewTextBoxColumn";
+            // 
             // VAgregarPaquete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(573, 565);
+            this.ClientSize = new System.Drawing.Size(637, 568);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.cbHasta);
@@ -406,6 +474,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.serviciosPaqueteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.destinoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -446,5 +516,13 @@
         private System.Windows.Forms.ComboBox cbHasta;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.BindingSource serviciosPaqueteBindingSource;
+        private System.Windows.Forms.BindingSource destinoBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn desdeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hastaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn servicioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn provinciaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paisDataGridViewTextBoxColumn;
     }
 }

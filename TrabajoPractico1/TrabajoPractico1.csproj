@@ -129,6 +129,7 @@
     </EmbeddedResource>
     <None Include="Properties\DataSources\TrabajoPractico1.Modelo.Ciudad.datasource" />
     <None Include="Properties\DataSources\TrabajoPractico1.Modelo.Paquete.datasource" />
+    <None Include="Properties\DataSources\TrabajoPractico1.Modelo.Salida.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
