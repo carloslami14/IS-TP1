@@ -32,17 +32,21 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.tbServicios = new System.Windows.Forms.DataGridView();
+            this.desdeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hastaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.servicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serviciosPaqueteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.cbServicio = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tbDestino = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cbDestino = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -54,7 +58,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.cbOrigen = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -62,19 +66,15 @@
             this.cbHasta = new System.Windows.Forms.ComboBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.serviciosPaqueteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.destinoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ciudadBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.provinciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.provinciaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.paisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.desdeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hastaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.servicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbServicios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviciosPaqueteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.destinoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbDestino)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -105,27 +105,54 @@
             this.label10.TabIndex = 47;
             this.label10.Text = "Desde";
             // 
-            // dataGridView2
+            // tbServicios
             // 
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tbServicios.AutoGenerateColumns = false;
+            this.tbServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tbServicios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.desdeDataGridViewTextBoxColumn,
             this.hastaDataGridViewTextBoxColumn,
             this.servicioDataGridViewTextBoxColumn});
-            this.dataGridView2.DataSource = this.serviciosPaqueteBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(271, 388);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(354, 118);
-            this.dataGridView2.TabIndex = 46;
+            this.tbServicios.DataSource = this.serviciosPaqueteBindingSource;
+            this.tbServicios.Location = new System.Drawing.Point(271, 388);
+            this.tbServicios.Name = "tbServicios";
+            this.tbServicios.Size = new System.Drawing.Size(354, 118);
+            this.tbServicios.TabIndex = 46;
             // 
-            // comboBox5
+            // desdeDataGridViewTextBoxColumn
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(325, 281);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(196, 21);
-            this.comboBox5.TabIndex = 45;
+            this.desdeDataGridViewTextBoxColumn.DataPropertyName = "desde";
+            this.desdeDataGridViewTextBoxColumn.HeaderText = "Desde";
+            this.desdeDataGridViewTextBoxColumn.Name = "desdeDataGridViewTextBoxColumn";
+            // 
+            // hastaDataGridViewTextBoxColumn
+            // 
+            this.hastaDataGridViewTextBoxColumn.DataPropertyName = "hasta";
+            this.hastaDataGridViewTextBoxColumn.HeaderText = "Hasta";
+            this.hastaDataGridViewTextBoxColumn.Name = "hastaDataGridViewTextBoxColumn";
+            // 
+            // servicioDataGridViewTextBoxColumn
+            // 
+            this.servicioDataGridViewTextBoxColumn.DataPropertyName = "servicio";
+            this.servicioDataGridViewTextBoxColumn.HeaderText = "Servicio";
+            this.servicioDataGridViewTextBoxColumn.Name = "servicioDataGridViewTextBoxColumn";
+            // 
+            // serviciosPaqueteBindingSource
+            // 
+            this.serviciosPaqueteBindingSource.DataMember = "serviciosPaquete";
+            this.serviciosPaqueteBindingSource.DataSource = this.bindingSource1;
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(TrabajoPractico1.Modelo.Paquete);
+            // 
+            // cbServicio
+            // 
+            this.cbServicio.FormattingEnabled = true;
+            this.cbServicio.Location = new System.Drawing.Point(325, 281);
+            this.cbServicio.Name = "cbServicio";
+            this.cbServicio.Size = new System.Drawing.Size(196, 21);
+            this.cbServicio.TabIndex = 45;
             // 
             // label9
             // 
@@ -136,19 +163,19 @@
             this.label9.TabIndex = 44;
             this.label9.Text = "Servicio";
             // 
-            // dataGridView1
+            // tbDestino
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tbDestino.AutoGenerateColumns = false;
+            this.tbDestino.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tbDestino.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombreDataGridViewTextBoxColumn,
-            this.provinciaDataGridViewTextBoxColumn,
+            this.provinciaDataGridViewTextBoxColumn1,
             this.paisDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.destinoBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(274, 148);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(351, 118);
-            this.dataGridView1.TabIndex = 43;
+            this.tbDestino.DataSource = this.ciudadBindingSource;
+            this.tbDestino.Location = new System.Drawing.Point(274, 157);
+            this.tbDestino.Name = "tbDestino";
+            this.tbDestino.Size = new System.Drawing.Size(351, 118);
+            this.tbDestino.TabIndex = 43;
             // 
             // button1
             // 
@@ -160,13 +187,13 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // comboBox4
+            // cbDestino
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(357, 67);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(176, 21);
-            this.comboBox4.TabIndex = 41;
+            this.cbDestino.FormattingEnabled = true;
+            this.cbDestino.Location = new System.Drawing.Point(357, 67);
+            this.cbDestino.Name = "cbDestino";
+            this.cbDestino.Size = new System.Drawing.Size(176, 21);
+            this.cbDestino.TabIndex = 41;
             // 
             // comboBox3
             // 
@@ -196,16 +223,12 @@
             // 
             // textBox4
             // 
-            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.bindingSource1, "itinerario", true));
+            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "itinerario", true));
             this.textBox4.Location = new System.Drawing.Point(82, 379);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(151, 60);
             this.textBox4.TabIndex = 37;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = typeof(TrabajoPractico1.Modelo.Paquete);
             // 
             // label6
             // 
@@ -218,7 +241,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.bindingSource1, "cc", true));
+            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "cc", true));
             this.textBox3.Location = new System.Drawing.Point(82, 278);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
@@ -227,7 +250,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.bindingSource1, "descripcion", true));
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "descripcion", true));
             this.textBox2.Location = new System.Drawing.Point(82, 175);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
@@ -254,7 +277,7 @@
             // 
             // cbNoches
             // 
-            this.cbNoches.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.bindingSource1, "cantNoches", true));
+            this.cbNoches.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "cantNoches", true));
             this.cbNoches.FormattingEnabled = true;
             this.cbNoches.Location = new System.Drawing.Point(151, 109);
             this.cbNoches.Name = "cbNoches";
@@ -263,7 +286,7 @@
             // 
             // cbDias
             // 
-            this.cbDias.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.bindingSource1, "cantDias", true));
+            this.cbDias.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "cantDias", true));
             this.cbDias.FormattingEnabled = true;
             this.cbDias.Location = new System.Drawing.Point(151, 67);
             this.cbDias.Name = "cbDias";
@@ -304,15 +327,13 @@
             this.label1.TabIndex = 26;
             this.label1.Text = "Nombre";
             // 
-            // comboBox6
+            // cbOrigen
             // 
-            this.comboBox6.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.bindingSource1, "origen", true));
-            this.comboBox6.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "origen", true));
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(360, 26);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(176, 21);
-            this.comboBox6.TabIndex = 55;
+            this.cbOrigen.FormattingEnabled = true;
+            this.cbOrigen.Location = new System.Drawing.Point(360, 26);
+            this.cbOrigen.Name = "cbOrigen";
+            this.cbOrigen.Size = new System.Drawing.Size(176, 21);
+            this.cbOrigen.TabIndex = 55;
             // 
             // label12
             // 
@@ -383,15 +404,9 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // serviciosPaqueteBindingSource
+            // ciudadBindingSource
             // 
-            this.serviciosPaqueteBindingSource.DataMember = "serviciosPaquete";
-            this.serviciosPaqueteBindingSource.DataSource = this.bindingSource1;
-            // 
-            // destinoBindingSource
-            // 
-            this.destinoBindingSource.DataMember = "destino";
-            this.destinoBindingSource.DataSource = this.bindingSource1;
+            this.ciudadBindingSource.DataSource = typeof(TrabajoPractico1.Modelo.Ciudad);
             // 
             // nombreDataGridViewTextBoxColumn
             // 
@@ -399,35 +414,19 @@
             this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
             // 
-            // provinciaDataGridViewTextBoxColumn
+            // provinciaDataGridViewTextBoxColumn1
             // 
-            this.provinciaDataGridViewTextBoxColumn.DataPropertyName = "provincia";
-            this.provinciaDataGridViewTextBoxColumn.HeaderText = "Provincia";
-            this.provinciaDataGridViewTextBoxColumn.Name = "provinciaDataGridViewTextBoxColumn";
+            this.provinciaDataGridViewTextBoxColumn1.DataPropertyName = "_provincia";
+            this.provinciaDataGridViewTextBoxColumn1.HeaderText = "Provincia";
+            this.provinciaDataGridViewTextBoxColumn1.Name = "provinciaDataGridViewTextBoxColumn1";
+            this.provinciaDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // paisDataGridViewTextBoxColumn
             // 
-            this.paisDataGridViewTextBoxColumn.DataPropertyName = "pais";
+            this.paisDataGridViewTextBoxColumn.DataPropertyName = "_pais";
             this.paisDataGridViewTextBoxColumn.HeaderText = "Pais";
             this.paisDataGridViewTextBoxColumn.Name = "paisDataGridViewTextBoxColumn";
-            // 
-            // desdeDataGridViewTextBoxColumn
-            // 
-            this.desdeDataGridViewTextBoxColumn.DataPropertyName = "desde";
-            this.desdeDataGridViewTextBoxColumn.HeaderText = "Desde";
-            this.desdeDataGridViewTextBoxColumn.Name = "desdeDataGridViewTextBoxColumn";
-            // 
-            // hastaDataGridViewTextBoxColumn
-            // 
-            this.hastaDataGridViewTextBoxColumn.DataPropertyName = "hasta";
-            this.hastaDataGridViewTextBoxColumn.HeaderText = "Hasta";
-            this.hastaDataGridViewTextBoxColumn.Name = "hastaDataGridViewTextBoxColumn";
-            // 
-            // servicioDataGridViewTextBoxColumn
-            // 
-            this.servicioDataGridViewTextBoxColumn.DataPropertyName = "servicio";
-            this.servicioDataGridViewTextBoxColumn.HeaderText = "Servicio";
-            this.servicioDataGridViewTextBoxColumn.Name = "servicioDataGridViewTextBoxColumn";
+            this.paisDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // VAgregarPaquete
             // 
@@ -438,19 +437,19 @@
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.cbHasta);
             this.Controls.Add(this.cbDesde);
-            this.Controls.Add(this.comboBox6);
+            this.Controls.Add(this.cbOrigen);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.comboBox5);
+            this.Controls.Add(this.tbServicios);
+            this.Controls.Add(this.cbServicio);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.tbDestino);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.cbDestino);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -470,12 +469,11 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Paquete";
-            this.Load += new System.EventHandler(this.VAgregarPaquete_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbServicios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviciosPaqueteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.destinoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbDestino)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -486,12 +484,12 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.DataGridView tbServicios;
+        private System.Windows.Forms.ComboBox cbServicio;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView tbDestino;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cbDestino;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -507,7 +505,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox cbOrigen;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label13;
@@ -517,12 +515,12 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.BindingSource serviciosPaqueteBindingSource;
-        private System.Windows.Forms.BindingSource destinoBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn desdeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hastaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn servicioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource ciudadBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn provinciaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn provinciaDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn paisDataGridViewTextBoxColumn;
     }
 }

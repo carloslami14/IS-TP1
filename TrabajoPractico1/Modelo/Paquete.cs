@@ -35,19 +35,19 @@ namespace TrabajoPractico1.Modelo
             this.pasoFronterizo = pasoFronterizo;
         }
 
-        public void AgregarDestino(Ciudad ciudad)
+        public void AgregarDestinos(List<Ciudad> destinos)
         {
-            this.destino.Add(ciudad);
+            this.destino = destinos;
         }
 
-        public void AgregarServicioPaquete(ServicioPaquete servicio)
+        public void AgregarServiciosPaquete(List<ServicioPaquete> servicios)
         {
-            this.serviciosPaquete.Add(servicio);
+            this.serviciosPaquete = servicios;
         }
 
-        public void AgregarPasoFronterizo(PasoFronterizo paso)
+        public void AgregarPasoFronterizo(List<PasoFronterizo> pasos)
         {
-            this.pasoFronterizo.Add(paso);
+            this.pasoFronterizo = pasos;
         }
     }
 }

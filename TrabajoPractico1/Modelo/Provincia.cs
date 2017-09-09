@@ -6,15 +6,22 @@ using System.Threading.Tasks;
 
 namespace TrabajoPractico1.Modelo
 {
-    class Provincia
+    public class Provincia
     {
         public string nombre { get; set; }
+        public List<Ciudad> ciudades { get; set; }
         public Pais pais { get; set; }
 
         public Provincia(string nombre, Pais pais)
         {
             this.nombre = nombre;
             this.pais = pais;
+            ciudades = new List<Ciudad>();
+        }
+
+        public void AgregarCiudades(Ciudad c)
+        {
+            ciudades.Add(c);
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrabajoPractico1.Modelo
 {
-    class Tipo
+    public class Tipo
     {
         public string tipo { get; set; }
         public Rubro rubro { get; set; }

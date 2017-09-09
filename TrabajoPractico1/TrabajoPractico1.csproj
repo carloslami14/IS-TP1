@@ -70,7 +70,9 @@
     <Compile Include="Modelo\Tarifa.cs" />
     <Compile Include="Modelo\Tipo.cs" />
     <Compile Include="Presentador\PresentadorInicio.cs" />
+    <Compile Include="Presentador\PresentadorListarPaquetes.cs" />
     <Compile Include="Presentador\PresentadorPaquete.cs" />
+    <Compile Include="Repositorio\Repositorio.cs" />
     <Compile Include="Vista\VAgregarPaquete.cs">
       <SubType>Form</SubType>
     </Compile>

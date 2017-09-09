@@ -1,6 +1,6 @@
 ﻿namespace TrabajoPractico1.Modelo
 {
-    enum Rubro
+    public enum Rubro
     {
         Transporte,
         Alojamiento,

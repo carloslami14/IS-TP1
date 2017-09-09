@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrabajoPractico1.Modelo
 {
-    class ServicioPaquete
+    public class ServicioPaquete
     {
         public int desde { get; set; }
         public int hasta { get; set; }
@@ -17,6 +17,11 @@ namespace TrabajoPractico1.Modelo
             this.desde = desde;
             this.hasta = hasta;
             this.servicio = servicio;
+        }
+
+        public string GetServicio()
+        {
+            return servicio.nombre;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrabajoPractico1.Modelo
 {
-    class Servicio
+    public class Servicio
     {
         public string nombre { get; set; }
         public Tipo tipo { get; set; }
@@ -15,6 +15,11 @@ namespace TrabajoPractico1.Modelo
         {
             this.nombre = nombre;
             this.tipo = tipo;
+        }
+
+        public override string ToString()
+        {
+            return nombre + "," + tipo.tipo + "," + tipo.rubro;
         }
     }
 }
