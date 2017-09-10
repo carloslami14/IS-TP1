@@ -10,5 +10,6 @@ namespace TrabajoPractico1.Interfaces
    interface IListarPaquetes
    {
         void CargarTabla(List<Paquete> paquete);
+        void Notificar(string mensaje);
    }
 }

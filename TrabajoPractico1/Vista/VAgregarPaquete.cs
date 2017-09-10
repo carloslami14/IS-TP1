@@ -30,7 +30,7 @@ namespace TrabajoPractico1.Vista
             bindingSource1.DataSource = new Paquete();
             ciudadBindingSource.DataSource = new List<Ciudad>();
             pasoFronterizoBindingSource.DataSource = new List<PasoFronterizo>();
-            serviciosPaqueteBindingSource.DataSource = new List<ServicioPaquete>();
+            servicioPaqueteBindingSource.DataSource = new List<ServicioPaquete>();
             CargarListasDesplegables();
         }
 
@@ -38,8 +38,6 @@ namespace TrabajoPractico1.Vista
         {
             for (int i = 1; i <= 30; i++)
             {
-                cbDias.Items.Add(i);
-                cbNoches.Items.Add(i);
                 cbDesde.Items.Add(i);
                 cbHasta.Items.Add(i);
             }
@@ -89,7 +87,7 @@ namespace TrabajoPractico1.Vista
 
         private void GuardarPaquete()
         {
-            _presentador.AgregarPaquete(bindingSource1.Current as Paquete, ciudadBindingSource.List as List<Ciudad>, serviciosPaqueteBindingSource.List as List<ServicioPaquete>, cbOrigen.SelectedItem.ToString().Split(',')[0]);
+            _presentador.AgregarPaquete(bindingSource1.Current as Paquete, ciudadBindingSource.List as List<Ciudad>, servicioPaqueteBindingSource.List as List<ServicioPaquete>, cbOrigen.SelectedItem.ToString().Split(',')[0], pasoFronterizoBindingSource.List as List<PasoFronterizo>);
         }
 
         private void AgregarDestino()
@@ -114,7 +112,7 @@ namespace TrabajoPractico1.Vista
 
         public void ActualizarTablaServicio(ServicioPaquete s)
         {
-            serviciosPaqueteBindingSource.Add(s);
+            servicioPaqueteBindingSource.Add(s);
         }
 
         public void ActualizarTablaPasoFronterizo(PasoFronterizo p)

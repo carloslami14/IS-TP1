@@ -1,6 +1,6 @@
 ﻿namespace TrabajoPractico1.Modelo
 {
-    enum EstadoPaquete
+    public enum EstadoPaquete
     {
         Creado,
         Activo,

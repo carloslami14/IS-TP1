@@ -42,7 +42,7 @@ namespace TrabajoPractico1.Vista
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ModificarEstadoPaquete();
+            DesactivarPaquete();
         }
 
         private void ModificarPaquete()
@@ -59,9 +59,14 @@ namespace TrabajoPractico1.Vista
             }
         }
 
-        private void ModificarEstadoPaquete()
+        private void DesactivarPaquete()
         {
+            _presentador.DesactivarPaquete(paqueteBindingSource.Current as Paquete);
+        }
 
+        public void Notificar(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Modificar Estado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
     }
 }

@@ -44,11 +44,13 @@ namespace TrabajoPractico1.Presentador
             return Repositorio.Repositorio.GetPasosFronterizos();
         }
 
-        public void AgregarPaquete(Paquete p, List<Ciudad> d, List<ServicioPaquete> s, string origen)
+        public void AgregarPaquete(Paquete p, List<Ciudad> d, List<ServicioPaquete> s, string origen, List<PasoFronterizo> paso)
         {
             _paquete = p;
             _paquete.AgregarDestinos(d);
+            _paquete.estado = EstadoPaquete.Activo;
             _paquete.AgregarServiciosPaquete(s);
+            _paquete.AgregarPasoFronterizo(paso);
             _paquete.origen = BuscarCiudad(origen);
             Repositorio.Repositorio.AgregarPaquete(_paquete);
         }

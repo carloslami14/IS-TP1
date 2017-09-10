@@ -135,6 +135,7 @@
     <None Include="Properties\DataSources\TrabajoPractico1.Modelo.Paquete.datasource" />
     <None Include="Properties\DataSources\TrabajoPractico1.Modelo.PasoFronterizo.datasource" />
     <None Include="Properties\DataSources\TrabajoPractico1.Modelo.Salida.datasource" />
+    <None Include="Properties\DataSources\TrabajoPractico1.Modelo.ServicioPaquete.datasource" />
     <None Include="Properties\DataSources\TrabajoPractico1.Modelo.Tarifa.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
