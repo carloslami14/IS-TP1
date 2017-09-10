@@ -35,6 +35,16 @@ namespace TrabajoPractico1.Vista
             this.Dispose();
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DesactivarPaquete();
+        }
+
+        private void DesactivarPaquete()
+        {
+            _presentador.DesactivarSalida(salidaBindingSource.Current as Salida);
+        }
+
         public void CargarTabla(List<Salida> salidas)
         {
             salidaBindingSource.Clear();
@@ -42,6 +52,11 @@ namespace TrabajoPractico1.Vista
             {
                 salidaBindingSource.Add(s);
             }
+        }
+
+        public void Notificar(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Modificar Estado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
     }
 }

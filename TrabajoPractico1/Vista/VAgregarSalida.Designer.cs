@@ -33,17 +33,17 @@
             this.cbPaquetes = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dtFecha = new System.Windows.Forms.DateTimePicker();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tbCupos = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cbBase = new System.Windows.Forms.ComboBox();
+            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.tbTarifa = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             this.SuspendLayout();
@@ -76,11 +76,16 @@
             // 
             // dtFecha
             // 
-            this.dtFecha.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource1, "fecha", true));
+            this.dtFecha.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource1, "fecha", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "D"));
             this.dtFecha.Location = new System.Drawing.Point(83, 49);
             this.dtFecha.Name = "dtFecha";
             this.dtFecha.Size = new System.Drawing.Size(200, 20);
             this.dtFecha.TabIndex = 3;
+            this.dtFecha.Value = new System.DateTime(2017, 9, 10, 16, 7, 58, 0);
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(TrabajoPractico1.Modelo.Salida);
             // 
             // label3
             // 
@@ -126,6 +131,10 @@
             this.cbBase.Size = new System.Drawing.Size(121, 21);
             this.cbBase.TabIndex = 8;
             // 
+            // bindingSource2
+            // 
+            this.bindingSource2.DataSource = typeof(TrabajoPractico1.Modelo.Tarifa);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -162,14 +171,6 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = typeof(TrabajoPractico1.Modelo.Salida);
-            // 
-            // bindingSource2
-            // 
-            this.bindingSource2.DataSource = typeof(TrabajoPractico1.Modelo.Tarifa);
             // 
             // VAgregarSalida
             // 

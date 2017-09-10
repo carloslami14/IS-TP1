@@ -77,11 +77,17 @@ namespace TrabajoPractico1.Repositorio
             _paquetes.Add(paquete1);
 
             Tarifa ta1 = new Tarifa(22, Base.Cuadruple);
-            DateTime data = new DateTime();
+            Tarifa ta2 = new Tarifa(100, Base.Doble);
+            DateTime data = new DateTime(2017, 9, 10);
+            DateTime data2 = new DateTime(2017, 9, 7);
 
-            Salida salida1 = new Salida(paquete1, 12,1,ta1, EstadoSalida.Creada, data);
+            Salida salida1 = new Salida(paquete1, 12,1,ta1, EstadoSalida.EnVenta, data);
+            Salida salida2 = new Salida(paquete1, 212, 2, ta1, EstadoSalida.Creada, data);
+            Salida salida3 = new Salida(paquete1, 11, 3, ta2, EstadoSalida.EnEjecucion, data2);
 
             _salidas.Add(salida1);
+            _salidas.Add(salida2);
+            _salidas.Add(salida3);
         }
 
         public static List<Paquete> GetPaquetes()

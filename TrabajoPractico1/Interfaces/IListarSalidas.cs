@@ -10,5 +10,6 @@ namespace TrabajoPractico1.Interfaces
     interface IListarSalidas
     {
         void CargarTabla(List<Salida> salidas);
+        void Notificar(string mensaje);
     }
 }

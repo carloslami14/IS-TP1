@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TrabajoPractico1.Interfaces;
+using TrabajoPractico1.Modelo;
 
 namespace TrabajoPractico1.Presentador
 {
@@ -19,6 +20,11 @@ namespace TrabajoPractico1.Presentador
         public void CargarTabla()
         {
             _vista.CargarTabla(Repositorio.Repositorio.GetPaquetes());
+        }
+
+        public void ModificarPaquete(Paquete p)
+        {
+
         }
     }
 }

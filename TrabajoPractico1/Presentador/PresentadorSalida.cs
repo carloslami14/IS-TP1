@@ -28,6 +28,7 @@ namespace TrabajoPractico1.Presentador
         public void CrearSalida()
         {
             _salida = new Salida();
+            _salida.estado = EstadoSalida.Creada;
         }
 
         public void GuardarSalida(Salida salida, string paquete, Tarifa tar)
@@ -36,7 +37,7 @@ namespace TrabajoPractico1.Presentador
             _salida.numero = Repositorio.Repositorio.GetSalidas().Count + 1;
             _salida.paquete = BuscarPaquete(paquete);
             _salida.tarifa = tar;
-            _salida.estado = EstadoSalida.Creada;
+            _salida.estado = EstadoSalida.EnVenta;
             Repositorio.Repositorio.AgregarSalida(_salida);
         }
 

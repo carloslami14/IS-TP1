@@ -40,9 +40,14 @@ namespace TrabajoPractico1.Vista
             ModificarPaquete();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ModificarEstadoPaquete();
+        }
+
         private void ModificarPaquete()
         {
-
+            _presentador.ModificarPaquete(paqueteBindingSource.Current as Paquete);
         }
 
         public void CargarTabla(List<Paquete> paquete)
@@ -52,6 +57,11 @@ namespace TrabajoPractico1.Vista
             {
                 paqueteBindingSource.Add(p);
             }
+        }
+
+        private void ModificarEstadoPaquete()
+        {
+
         }
     }
 }

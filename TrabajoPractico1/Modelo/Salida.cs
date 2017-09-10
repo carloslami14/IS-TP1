@@ -20,7 +20,10 @@ namespace TrabajoPractico1.Modelo
         public string _fecha { get { return GetFecha(); } }
         public string _tarifa { get { return GetTarifa(); } }
 
-        public Salida() { }
+        public Salida()
+        {
+            fecha = DateTime.Now;
+        }
 
         public Salida(Paquete paquete, int cupo, int numero, Tarifa tarifa, EstadoSalida estado, DateTime fecha)
         {
