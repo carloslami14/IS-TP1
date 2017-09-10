@@ -1,6 +1,6 @@
 ﻿namespace TrabajoPractico1.Modelo
 {
-    enum Base
+    public enum Base
     {
         Simple,
         Doble,

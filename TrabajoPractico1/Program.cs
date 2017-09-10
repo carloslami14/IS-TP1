@@ -15,6 +15,7 @@ namespace TrabajoPractico1
         [STAThread]
         static void Main()
         {
+            Repositorio.Repositorio.Inicio();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new VInicio());

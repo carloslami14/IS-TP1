@@ -30,7 +30,6 @@ namespace TrabajoPractico1.Modelo
             return provincia.pais.nombre;
         }
 
-
         public override string ToString()
         {
             return nombre + ", " + provincia.nombre + ", " + provincia.pais.nombre;

@@ -13,12 +13,10 @@ namespace TrabajoPractico1.Presentador
     {
         private readonly IAgregarPaquete _vista;
         private Paquete _paquete;
-        private Repositorio.Repositorio _repositorio;
 
         public PresentadorPaquete(IAgregarPaquete vista)
         {
             this._vista = vista;
-            _repositorio = new Repositorio.Repositorio();
         }
 
         public void CrearPaquete()
@@ -28,17 +26,22 @@ namespace TrabajoPractico1.Presentador
 
         public List<Ciudad> GetCiudades()
         {
-            return _repositorio.GetCiudades();
+            return Repositorio.Repositorio.GetCiudades();
         }
 
         public List<Servicio> GetServicios()
         {
-            return _repositorio.GetServicios();
+            return Repositorio.Repositorio.GetServicios();
         }
 
         public List<ServicioPaquete> GetServiciosPaquete()
         {
-            return _repositorio.GetServicioPaquete();
+            return Repositorio.Repositorio.GetServicioPaquete();
+        }
+
+        public List<PasoFronterizo> GetPasosFronterizos()
+        {
+            return Repositorio.Repositorio.GetPasosFronterizos();
         }
 
         public void AgregarPaquete(Paquete p, List<Ciudad> d, List<ServicioPaquete> s, string origen)
@@ -47,30 +50,38 @@ namespace TrabajoPractico1.Presentador
             _paquete.AgregarDestinos(d);
             _paquete.AgregarServiciosPaquete(s);
             _paquete.origen = BuscarCiudad(origen);
-            _repositorio.AgregarPaquete(_paquete);
+            Repositorio.Repositorio.AgregarPaquete(_paquete);
         }
 
         public void AgregarDestino(string ciudad)
         {
-            Ciudad c = BuscarCiudad(ciudad);
-            _vista.ActualizarTablaDestino(c);
+            _vista.ActualizarTablaDestino(BuscarCiudad(ciudad));
+        }
+
+        public void AgregarPaso(string paso)
+        {
+            _vista.ActualizarTablaPasoFronterizo(BuscarPasoFronterizo(paso));
         }
 
         public void AgregarServicio(string servicio, int desde, int hasta)
         {
-            Servicio s = BuscarServicio(servicio);
-            ServicioPaquete ser = new ServicioPaquete(desde, hasta, s);
+            ServicioPaquete ser = new ServicioPaquete(desde, hasta, BuscarServicio(servicio));
             _vista.ActualizarTablaServicio(ser);
         }
 
         private Ciudad BuscarCiudad(string nombre)
         {
-            return _repositorio.BuscarCiudad(nombre);
+            return Repositorio.Repositorio.BuscarCiudad(nombre);
         }
 
         private Servicio BuscarServicio(string nombre)
         {
-            return _repositorio.BuscarServicio(nombre);
+            return Repositorio.Repositorio.BuscarServicio(nombre);
+        }
+
+        private PasoFronterizo BuscarPasoFronterizo(string paso)
+        {
+            return Repositorio.Repositorio.BuscarPasoFronterizo(paso);
         }
     }
 }

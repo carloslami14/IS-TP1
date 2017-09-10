@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrabajoPractico1.Modelo
 {
-    class PasoFronterizo
+    public class PasoFronterizo
     {
         public string nombre { get; set; }
         public Pais pais { get; set; }
@@ -15,6 +15,11 @@ namespace TrabajoPractico1.Modelo
         {
             this.nombre = nombre;
             this.pais = pais;
+        }
+
+        public override string ToString()
+        {
+            return nombre + "," + pais.nombre;
         }
     }
 }

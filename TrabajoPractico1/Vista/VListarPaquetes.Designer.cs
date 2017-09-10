@@ -37,32 +37,31 @@
             this.paqueteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itinerarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ccDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantDiasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantNochesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.origenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itinerarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ccDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paqueteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombreDataGridViewTextBoxColumn,
             this.descripcionDataGridViewTextBoxColumn,
-            this.itinerarioDataGridViewTextBoxColumn,
-            this.ccDataGridViewTextBoxColumn,
             this.cantDiasDataGridViewTextBoxColumn,
             this.cantNochesDataGridViewTextBoxColumn,
-            this.origenDataGridViewTextBoxColumn});
+            this.origenDataGridViewTextBoxColumn,
+            this.itinerarioDataGridViewTextBoxColumn,
+            this.ccDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.paqueteBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 66);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(754, 257);
+            this.dataGridView1.Size = new System.Drawing.Size(753, 257);
             this.dataGridView1.TabIndex = 0;
             // 
             // label1
@@ -101,6 +100,7 @@
             this.button3.TabIndex = 4;
             this.button3.Text = "Modificar Paquete";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // paqueteBindingSource
             // 
@@ -118,6 +118,24 @@
             this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
             this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
             // 
+            // cantDiasDataGridViewTextBoxColumn
+            // 
+            this.cantDiasDataGridViewTextBoxColumn.DataPropertyName = "cantDias";
+            this.cantDiasDataGridViewTextBoxColumn.HeaderText = "Dias";
+            this.cantDiasDataGridViewTextBoxColumn.Name = "cantDiasDataGridViewTextBoxColumn";
+            // 
+            // cantNochesDataGridViewTextBoxColumn
+            // 
+            this.cantNochesDataGridViewTextBoxColumn.DataPropertyName = "cantNoches";
+            this.cantNochesDataGridViewTextBoxColumn.HeaderText = "Noches";
+            this.cantNochesDataGridViewTextBoxColumn.Name = "cantNochesDataGridViewTextBoxColumn";
+            // 
+            // origenDataGridViewTextBoxColumn
+            // 
+            this.origenDataGridViewTextBoxColumn.DataPropertyName = "origen";
+            this.origenDataGridViewTextBoxColumn.HeaderText = "Origen";
+            this.origenDataGridViewTextBoxColumn.Name = "origenDataGridViewTextBoxColumn";
+            // 
             // itinerarioDataGridViewTextBoxColumn
             // 
             this.itinerarioDataGridViewTextBoxColumn.DataPropertyName = "itinerario";
@@ -129,24 +147,6 @@
             this.ccDataGridViewTextBoxColumn.DataPropertyName = "cc";
             this.ccDataGridViewTextBoxColumn.HeaderText = "CC";
             this.ccDataGridViewTextBoxColumn.Name = "ccDataGridViewTextBoxColumn";
-            // 
-            // cantDiasDataGridViewTextBoxColumn
-            // 
-            this.cantDiasDataGridViewTextBoxColumn.DataPropertyName = "cantDias";
-            this.cantDiasDataGridViewTextBoxColumn.HeaderText = "Cantidad Dias";
-            this.cantDiasDataGridViewTextBoxColumn.Name = "cantDiasDataGridViewTextBoxColumn";
-            // 
-            // cantNochesDataGridViewTextBoxColumn
-            // 
-            this.cantNochesDataGridViewTextBoxColumn.DataPropertyName = "cantNoches";
-            this.cantNochesDataGridViewTextBoxColumn.HeaderText = "Cantidad Noches";
-            this.cantNochesDataGridViewTextBoxColumn.Name = "cantNochesDataGridViewTextBoxColumn";
-            // 
-            // origenDataGridViewTextBoxColumn
-            // 
-            this.origenDataGridViewTextBoxColumn.DataPropertyName = "origen";
-            this.origenDataGridViewTextBoxColumn.HeaderText = "Origen";
-            this.origenDataGridViewTextBoxColumn.Name = "origenDataGridViewTextBoxColumn";
             // 
             // VListarPaquetes
             // 
@@ -175,13 +175,13 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.BindingSource paqueteBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itinerarioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ccDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantDiasDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantNochesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn origenDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource paqueteBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn itinerarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ccDataGridViewTextBoxColumn;
     }
 }

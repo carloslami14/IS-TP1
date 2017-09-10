@@ -7,18 +7,18 @@ using TrabajoPractico1.Interfaces;
 
 namespace TrabajoPractico1.Presentador
 {
-    class PresentadorListarPaquetes
+    class PresentadorListarSalidas
     {
-        private readonly IListarPaquetes _vista;
+        private readonly IListarSalidas _vista;
 
-        public PresentadorListarPaquetes(IListarPaquetes vista)
+        public PresentadorListarSalidas(IListarSalidas vista)
         {
             _vista = vista;
         }
 
         public void CargarTabla()
         {
-            _vista.CargarTabla(Repositorio.Repositorio.GetPaquetes());
+            _vista.CargarTabla(Repositorio.Repositorio.GetSalidas());
         }
     }
 }

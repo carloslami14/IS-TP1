@@ -36,11 +36,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.salidaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.numeroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paqueteDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cupoSalidaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tarifaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paqueteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.servicioSalidaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tarifaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salidaBindingSource)).BeginInit();
@@ -48,26 +47,24 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.numeroDataGridViewTextBoxColumn,
+            this.paqueteDataGridViewTextBoxColumn1,
             this.cupoSalidaDataGridViewTextBoxColumn,
-            this.tarifaDataGridViewTextBoxColumn,
-            this.fechaDataGridViewTextBoxColumn,
-            this.paqueteDataGridViewTextBoxColumn,
-            this.servicioSalidaDataGridViewTextBoxColumn,
+            this.fechaDataGridViewTextBoxColumn1,
+            this.tarifaDataGridViewTextBoxColumn1,
             this.estadoDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.salidaBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 41);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(748, 205);
+            this.dataGridView1.Size = new System.Drawing.Size(657, 205);
             this.dataGridView1.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(672, 328);
+            this.button1.Location = new System.Drawing.Point(563, 330);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -77,7 +74,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(672, 264);
+            this.button2.Location = new System.Drawing.Point(536, 264);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 2;
@@ -86,7 +83,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(521, 264);
+            this.button3.Location = new System.Drawing.Point(402, 264);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 3;
@@ -112,35 +109,32 @@
             this.numeroDataGridViewTextBoxColumn.HeaderText = "Numero";
             this.numeroDataGridViewTextBoxColumn.Name = "numeroDataGridViewTextBoxColumn";
             // 
+            // paqueteDataGridViewTextBoxColumn1
+            // 
+            this.paqueteDataGridViewTextBoxColumn1.DataPropertyName = "_paquete";
+            this.paqueteDataGridViewTextBoxColumn1.HeaderText = "Paquete";
+            this.paqueteDataGridViewTextBoxColumn1.Name = "paqueteDataGridViewTextBoxColumn1";
+            this.paqueteDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
             // cupoSalidaDataGridViewTextBoxColumn
             // 
             this.cupoSalidaDataGridViewTextBoxColumn.DataPropertyName = "cupoSalida";
             this.cupoSalidaDataGridViewTextBoxColumn.HeaderText = "Cupo";
             this.cupoSalidaDataGridViewTextBoxColumn.Name = "cupoSalidaDataGridViewTextBoxColumn";
             // 
-            // tarifaDataGridViewTextBoxColumn
+            // fechaDataGridViewTextBoxColumn1
             // 
-            this.tarifaDataGridViewTextBoxColumn.DataPropertyName = "tarifa";
-            this.tarifaDataGridViewTextBoxColumn.HeaderText = "Tarifa";
-            this.tarifaDataGridViewTextBoxColumn.Name = "tarifaDataGridViewTextBoxColumn";
+            this.fechaDataGridViewTextBoxColumn1.DataPropertyName = "_fecha";
+            this.fechaDataGridViewTextBoxColumn1.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn1.Name = "fechaDataGridViewTextBoxColumn1";
+            this.fechaDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
-            // fechaDataGridViewTextBoxColumn
+            // tarifaDataGridViewTextBoxColumn1
             // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "fecha";
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            // 
-            // paqueteDataGridViewTextBoxColumn
-            // 
-            this.paqueteDataGridViewTextBoxColumn.DataPropertyName = "paquete";
-            this.paqueteDataGridViewTextBoxColumn.HeaderText = "Paquete";
-            this.paqueteDataGridViewTextBoxColumn.Name = "paqueteDataGridViewTextBoxColumn";
-            // 
-            // servicioSalidaDataGridViewTextBoxColumn
-            // 
-            this.servicioSalidaDataGridViewTextBoxColumn.DataPropertyName = "servicioSalida";
-            this.servicioSalidaDataGridViewTextBoxColumn.HeaderText = "Servicio";
-            this.servicioSalidaDataGridViewTextBoxColumn.Name = "servicioSalidaDataGridViewTextBoxColumn";
+            this.tarifaDataGridViewTextBoxColumn1.DataPropertyName = "_tarifa";
+            this.tarifaDataGridViewTextBoxColumn1.HeaderText = "Precio/Base";
+            this.tarifaDataGridViewTextBoxColumn1.Name = "tarifaDataGridViewTextBoxColumn1";
+            this.tarifaDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // estadoDataGridViewTextBoxColumn
             // 
@@ -152,7 +146,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(771, 365);
+            this.ClientSize = new System.Drawing.Size(686, 365);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -176,13 +170,12 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numeroDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cupoSalidaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tarifaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn paqueteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn servicioSalidaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource salidaBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeroDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paqueteDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cupoSalidaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tarifaDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TrabajoPractico1.Presentador;
 using TrabajoPractico1.Interfaces;
+using TrabajoPractico1.Modelo;
 
 namespace TrabajoPractico1.Vista
 {
@@ -20,11 +21,37 @@ namespace TrabajoPractico1.Vista
         {
             InitializeComponent();
             _presentador = new PresentadorListarPaquetes(this);
+            Iniciar();
+        }
+
+        private void Iniciar()
+        {
+            paqueteBindingSource.DataSource = new Paquete();
+            _presentador.CargarTabla();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ModificarPaquete();
+        }
+
+        private void ModificarPaquete()
+        {
+
+        }
+
+        public void CargarTabla(List<Paquete> paquete)
+        {
+            paqueteBindingSource.Clear();
+            foreach (Paquete p in paquete)
+            {
+                paqueteBindingSource.Add(p);
+            }
         }
     }
 }

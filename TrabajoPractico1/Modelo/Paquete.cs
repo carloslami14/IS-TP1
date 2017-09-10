@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrabajoPractico1.Modelo
 {
-    class Paquete
+    public class Paquete
     {
         public string nombre { get; set; }
         public string descripcion { get; set; }
@@ -20,6 +20,17 @@ namespace TrabajoPractico1.Modelo
         public List<PasoFronterizo> pasoFronterizo { get; set; }
 
         public Paquete() { }
+
+        public Paquete(string nombre, string descripcion, string itinerario, string cc, int cantDias, int cantNoches, Ciudad origen)
+        {
+            this.nombre = nombre;
+            this.descripcion = descripcion;
+            this.itinerario = itinerario;
+            this.cc = cc;
+            this.cantDias = cantDias;
+            this.cantNoches = cantNoches;
+            this.origen = origen;
+        }
 
         public Paquete(string nombre, string descripcion, string itinerario, string cc, int cantDias, int cantNoches, Ciudad origen, List<Ciudad> destino, List<ServicioPaquete> servicioPaquete, List<PasoFronterizo> pasoFronterizo)
         {
@@ -43,6 +54,11 @@ namespace TrabajoPractico1.Modelo
         public void AgregarServiciosPaquete(List<ServicioPaquete> servicios)
         {
             this.serviciosPaquete = servicios;
+        }
+
+        public void AgregarPasoFronterizo(PasoFronterizo paso)
+        {
+            this.pasoFronterizo.Add(paso);
         }
 
         public void AgregarPasoFronterizo(List<PasoFronterizo> pasos)

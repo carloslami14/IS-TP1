@@ -11,5 +11,6 @@ namespace TrabajoPractico1.Interfaces
     {
         void ActualizarTablaDestino(Ciudad c);
         void ActualizarTablaServicio(ServicioPaquete s);
+        void ActualizarTablaPasoFronterizo(PasoFronterizo p);
     }
 }

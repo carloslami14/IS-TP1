@@ -29,6 +29,7 @@ namespace TrabajoPractico1.Vista
         {
             bindingSource1.DataSource = new Paquete();
             ciudadBindingSource.DataSource = new List<Ciudad>();
+            pasoFronterizoBindingSource.DataSource = new List<PasoFronterizo>();
             serviciosPaqueteBindingSource.DataSource = new List<ServicioPaquete>();
             CargarListasDesplegables();
         }
@@ -53,6 +54,11 @@ namespace TrabajoPractico1.Vista
             {
                 cbServicio.Items.Add(s.ToString());
             }
+
+            foreach (PasoFronterizo p in _presentador.GetPasosFronterizos())
+            {
+                cbPasoFronterizo.Items.Add(p.ToString());
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -76,6 +82,11 @@ namespace TrabajoPractico1.Vista
             AgregarServicio();
         }
 
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            AgregarPasoFronterizo();
+        }
+
         private void GuardarPaquete()
         {
             _presentador.AgregarPaquete(bindingSource1.Current as Paquete, ciudadBindingSource.List as List<Ciudad>, serviciosPaqueteBindingSource.List as List<ServicioPaquete>, cbOrigen.SelectedItem.ToString().Split(',')[0]);
@@ -83,14 +94,17 @@ namespace TrabajoPractico1.Vista
 
         private void AgregarDestino()
         {
-            string ciudad = cbDestino.SelectedItem.ToString().Split(',')[0];
-            _presentador.AgregarDestino(ciudad);
+            _presentador.AgregarDestino(cbDestino.SelectedItem.ToString().Split(',')[0]);
         }
 
         private void AgregarServicio()
         {
-            string servicio = cbServicio.SelectedItem.ToString().Split(',')[0];
-            _presentador.AgregarServicio(servicio, int.Parse(cbDesde.SelectedItem.ToString()), int.Parse(cbHasta.SelectedItem.ToString()));
+            _presentador.AgregarServicio(cbServicio.SelectedItem.ToString().Split(',')[0], int.Parse(cbDesde.SelectedItem.ToString()), int.Parse(cbHasta.SelectedItem.ToString()));
+        }
+
+        private void AgregarPasoFronterizo()
+        {
+            _presentador.AgregarPaso(cbPasoFronterizo.SelectedItem.ToString().Split(',')[0]);
         }
 
         public void ActualizarTablaDestino(Ciudad c)
@@ -101,6 +115,11 @@ namespace TrabajoPractico1.Vista
         public void ActualizarTablaServicio(ServicioPaquete s)
         {
             serviciosPaqueteBindingSource.Add(s);
+        }
+
+        public void ActualizarTablaPasoFronterizo(PasoFronterizo p)
+        {
+            pasoFronterizoBindingSource.Add(p);
         }
     }
 }

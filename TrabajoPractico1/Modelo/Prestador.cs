@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrabajoPractico1.Modelo
 {
-    class Prestador
+    public class Prestador
     {
         public string razonSocial { get; set; }
         public string domicilio { get; set; }

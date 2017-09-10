@@ -71,7 +71,9 @@
     <Compile Include="Modelo\Tipo.cs" />
     <Compile Include="Presentador\PresentadorInicio.cs" />
     <Compile Include="Presentador\PresentadorListarPaquetes.cs" />
+    <Compile Include="Presentador\PresentadorListarSalidas.cs" />
     <Compile Include="Presentador\PresentadorPaquete.cs" />
+    <Compile Include="Presentador\PresentadorSalida.cs" />
     <Compile Include="Repositorio\Repositorio.cs" />
     <Compile Include="Vista\VAgregarPaquete.cs">
       <SubType>Form</SubType>
@@ -131,7 +133,9 @@
     </EmbeddedResource>
     <None Include="Properties\DataSources\TrabajoPractico1.Modelo.Ciudad.datasource" />
     <None Include="Properties\DataSources\TrabajoPractico1.Modelo.Paquete.datasource" />
+    <None Include="Properties\DataSources\TrabajoPractico1.Modelo.PasoFronterizo.datasource" />
     <None Include="Properties\DataSources\TrabajoPractico1.Modelo.Salida.datasource" />
+    <None Include="Properties\DataSources\TrabajoPractico1.Modelo.Tarifa.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

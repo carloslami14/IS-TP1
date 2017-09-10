@@ -1,6 +1,6 @@
 ﻿namespace TrabajoPractico1.Modelo
 {
-    enum EstadoSalida
+    public enum EstadoSalida
     {
         Creada,
         EnVenta,

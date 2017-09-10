@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrabajoPractico1.Modelo
 {
-    class ServicioSalida
+    public class ServicioSalida
     {
         public int cupo { get; set; }
         public float precio { get; set; }

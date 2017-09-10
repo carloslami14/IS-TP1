@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.cbPaquetes = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,6 +42,10 @@
             this.tbTarifa = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -71,6 +76,7 @@
             // 
             // dtFecha
             // 
+            this.dtFecha.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource1, "fecha", true));
             this.dtFecha.Location = new System.Drawing.Point(83, 49);
             this.dtFecha.Name = "dtFecha";
             this.dtFecha.Size = new System.Drawing.Size(200, 20);
@@ -96,6 +102,7 @@
             // 
             // tbCupos
             // 
+            this.tbCupos.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "cupoSalida", true));
             this.tbCupos.Location = new System.Drawing.Point(83, 90);
             this.tbCupos.Name = "tbCupos";
             this.tbCupos.Size = new System.Drawing.Size(100, 20);
@@ -112,6 +119,7 @@
             // 
             // cbBase
             // 
+            this.cbBase.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource2, "vase", true));
             this.cbBase.FormattingEnabled = true;
             this.cbBase.Location = new System.Drawing.Point(150, 183);
             this.cbBase.Name = "cbBase";
@@ -123,12 +131,13 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(12, 228);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(34, 13);
+            this.label6.Size = new System.Drawing.Size(37, 13);
             this.label6.TabIndex = 9;
-            this.label6.Text = "Tarifa";
+            this.label6.Text = "Precio";
             // 
             // tbTarifa
             // 
+            this.tbTarifa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource2, "precio", true));
             this.tbTarifa.Location = new System.Drawing.Point(83, 225);
             this.tbTarifa.Name = "tbTarifa";
             this.tbTarifa.Size = new System.Drawing.Size(100, 20);
@@ -142,6 +151,7 @@
             this.btnAgregar.TabIndex = 11;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnCancelar
             // 
@@ -152,6 +162,14 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(TrabajoPractico1.Modelo.Salida);
+            // 
+            // bindingSource2
+            // 
+            this.bindingSource2.DataSource = typeof(TrabajoPractico1.Modelo.Tarifa);
             // 
             // VAgregarSalida
             // 
@@ -175,6 +193,8 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nueva Salida";
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,5 +215,7 @@
         private System.Windows.Forms.TextBox tbTarifa;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.BindingSource bindingSource2;
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnAgregarServicio = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.tbServicios = new System.Windows.Forms.DataGridView();
@@ -41,7 +41,11 @@
             this.cbServicio = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.tbDestino = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.provinciaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ciudadBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnAgregarDestino = new System.Windows.Forms.Button();
             this.cbDestino = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -66,31 +70,39 @@
             this.cbHasta = new System.Windows.Forms.ComboBox();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.ciudadBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.provinciaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnQuitarDestino = new System.Windows.Forms.Button();
+            this.btnQuitarServicio = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.cbPasoFronterizo = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.nombreDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paisDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pasoFronterizoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnAgregarPasoFronterizo = new System.Windows.Forms.Button();
+            this.btnQuitarPasoFronterizo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tbServicios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.serviciosPaqueteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbDestino)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pasoFronterizoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // button2
+            // btnAgregarServicio
             // 
-            this.button2.Location = new System.Drawing.Point(458, 359);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 51;
-            this.button2.Text = "Agregar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnAgregarServicio.Location = new System.Drawing.Point(217, 300);
+            this.btnAgregarServicio.Name = "btnAgregarServicio";
+            this.btnAgregarServicio.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregarServicio.TabIndex = 51;
+            this.btnAgregarServicio.Text = "Agregar";
+            this.btnAgregarServicio.UseVisualStyleBackColor = true;
+            this.btnAgregarServicio.Click += new System.EventHandler(this.button2_Click);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(420, 325);
+            this.label11.Location = new System.Drawing.Point(188, 257);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(35, 13);
             this.label11.TabIndex = 48;
@@ -99,7 +111,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(268, 325);
+            this.label10.Location = new System.Drawing.Point(24, 259);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(38, 13);
             this.label10.TabIndex = 47;
@@ -114,7 +126,7 @@
             this.hastaDataGridViewTextBoxColumn,
             this.servicioDataGridViewTextBoxColumn});
             this.tbServicios.DataSource = this.serviciosPaqueteBindingSource;
-            this.tbServicios.Location = new System.Drawing.Point(271, 388);
+            this.tbServicios.Location = new System.Drawing.Point(385, 205);
             this.tbServicios.Name = "tbServicios";
             this.tbServicios.Size = new System.Drawing.Size(354, 118);
             this.tbServicios.TabIndex = 46;
@@ -149,7 +161,7 @@
             // cbServicio
             // 
             this.cbServicio.FormattingEnabled = true;
-            this.cbServicio.Location = new System.Drawing.Point(325, 281);
+            this.cbServicio.Location = new System.Drawing.Point(96, 205);
             this.cbServicio.Name = "cbServicio";
             this.cbServicio.Size = new System.Drawing.Size(196, 21);
             this.cbServicio.TabIndex = 45;
@@ -157,7 +169,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(263, 281);
+            this.label9.Location = new System.Drawing.Point(24, 208);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(45, 13);
             this.label9.TabIndex = 44;
@@ -172,27 +184,51 @@
             this.provinciaDataGridViewTextBoxColumn1,
             this.paisDataGridViewTextBoxColumn});
             this.tbDestino.DataSource = this.ciudadBindingSource;
-            this.tbDestino.Location = new System.Drawing.Point(274, 157);
+            this.tbDestino.Location = new System.Drawing.Point(385, 364);
             this.tbDestino.Name = "tbDestino";
-            this.tbDestino.Size = new System.Drawing.Size(351, 118);
+            this.tbDestino.Size = new System.Drawing.Size(354, 116);
             this.tbDestino.TabIndex = 43;
             // 
-            // button1
+            // nombreDataGridViewTextBoxColumn
             // 
-            this.button1.Location = new System.Drawing.Point(458, 104);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 42;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // provinciaDataGridViewTextBoxColumn1
+            // 
+            this.provinciaDataGridViewTextBoxColumn1.DataPropertyName = "_provincia";
+            this.provinciaDataGridViewTextBoxColumn1.HeaderText = "Provincia";
+            this.provinciaDataGridViewTextBoxColumn1.Name = "provinciaDataGridViewTextBoxColumn1";
+            this.provinciaDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // paisDataGridViewTextBoxColumn
+            // 
+            this.paisDataGridViewTextBoxColumn.DataPropertyName = "_pais";
+            this.paisDataGridViewTextBoxColumn.HeaderText = "Pais";
+            this.paisDataGridViewTextBoxColumn.Name = "paisDataGridViewTextBoxColumn";
+            this.paisDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ciudadBindingSource
+            // 
+            this.ciudadBindingSource.DataSource = typeof(TrabajoPractico1.Modelo.Ciudad);
+            // 
+            // btnAgregarDestino
+            // 
+            this.btnAgregarDestino.Location = new System.Drawing.Point(217, 476);
+            this.btnAgregarDestino.Name = "btnAgregarDestino";
+            this.btnAgregarDestino.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregarDestino.TabIndex = 42;
+            this.btnAgregarDestino.Text = "Agregar";
+            this.btnAgregarDestino.UseVisualStyleBackColor = true;
+            this.btnAgregarDestino.Click += new System.EventHandler(this.button1_Click);
             // 
             // cbDestino
             // 
             this.cbDestino.FormattingEnabled = true;
-            this.cbDestino.Location = new System.Drawing.Point(357, 67);
+            this.cbDestino.Location = new System.Drawing.Point(115, 434);
             this.cbDestino.Name = "cbDestino";
-            this.cbDestino.Size = new System.Drawing.Size(176, 21);
+            this.cbDestino.Size = new System.Drawing.Size(219, 21);
             this.cbDestino.TabIndex = 41;
             // 
             // comboBox3
@@ -206,7 +242,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(268, 70);
+            this.label8.Location = new System.Drawing.Point(24, 442);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(79, 13);
             this.label8.TabIndex = 39;
@@ -224,16 +260,16 @@
             // textBox4
             // 
             this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "itinerario", true));
-            this.textBox4.Location = new System.Drawing.Point(82, 379);
+            this.textBox4.Location = new System.Drawing.Point(417, 77);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(151, 60);
+            this.textBox4.Size = new System.Drawing.Size(340, 45);
             this.textBox4.TabIndex = 37;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(24, 356);
+            this.label6.Location = new System.Drawing.Point(308, 80);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 13);
             this.label6.TabIndex = 36;
@@ -242,25 +278,25 @@
             // textBox3
             // 
             this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "cc", true));
-            this.textBox3.Location = new System.Drawing.Point(82, 278);
+            this.textBox3.Location = new System.Drawing.Point(417, 128);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(151, 60);
+            this.textBox3.Size = new System.Drawing.Size(340, 53);
             this.textBox3.TabIndex = 35;
             // 
             // textBox2
             // 
             this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "descripcion", true));
-            this.textBox2.Location = new System.Drawing.Point(82, 175);
+            this.textBox2.Location = new System.Drawing.Point(417, 23);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(151, 60);
+            this.textBox2.Size = new System.Drawing.Size(340, 44);
             this.textBox2.TabIndex = 34;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 253);
+            this.label5.Location = new System.Drawing.Point(308, 131);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 13);
             this.label5.TabIndex = 33;
@@ -269,7 +305,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 159);
+            this.label4.Location = new System.Drawing.Point(308, 29);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 13);
             this.label4.TabIndex = 32;
@@ -330,15 +366,15 @@
             // cbOrigen
             // 
             this.cbOrigen.FormattingEnabled = true;
-            this.cbOrigen.Location = new System.Drawing.Point(360, 26);
+            this.cbOrigen.Location = new System.Drawing.Point(115, 376);
             this.cbOrigen.Name = "cbOrigen";
-            this.cbOrigen.Size = new System.Drawing.Size(176, 21);
+            this.cbOrigen.Size = new System.Drawing.Size(219, 21);
             this.cbOrigen.TabIndex = 55;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(271, 29);
+            this.label12.Location = new System.Drawing.Point(24, 376);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(74, 13);
             this.label12.TabIndex = 54;
@@ -355,7 +391,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(27, 32);
+            this.label13.Location = new System.Drawing.Point(30, 26);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(44, 13);
             this.label13.TabIndex = 52;
@@ -370,7 +406,7 @@
             "2",
             "3",
             "5"});
-            this.cbDesde.Location = new System.Drawing.Point(325, 322);
+            this.cbDesde.Location = new System.Drawing.Point(96, 254);
             this.cbDesde.Name = "cbDesde";
             this.cbDesde.Size = new System.Drawing.Size(51, 21);
             this.cbDesde.TabIndex = 56;
@@ -379,14 +415,14 @@
             // 
             this.cbHasta.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.bindingSource1, "cantDias", true));
             this.cbHasta.FormattingEnabled = true;
-            this.cbHasta.Location = new System.Drawing.Point(470, 322);
+            this.cbHasta.Location = new System.Drawing.Point(241, 254);
             this.cbHasta.Name = "cbHasta";
             this.cbHasta.Size = new System.Drawing.Size(51, 21);
             this.cbHasta.TabIndex = 57;
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(458, 530);
+            this.btnSalir.Location = new System.Drawing.Point(664, 651);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 58;
@@ -396,7 +432,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(357, 530);
+            this.btnGuardar.Location = new System.Drawing.Point(543, 651);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 59;
@@ -404,35 +440,101 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // ciudadBindingSource
+            // btnQuitarDestino
             // 
-            this.ciudadBindingSource.DataSource = typeof(TrabajoPractico1.Modelo.Ciudad);
+            this.btnQuitarDestino.Location = new System.Drawing.Point(105, 476);
+            this.btnQuitarDestino.Name = "btnQuitarDestino";
+            this.btnQuitarDestino.Size = new System.Drawing.Size(75, 23);
+            this.btnQuitarDestino.TabIndex = 60;
+            this.btnQuitarDestino.Text = "Quitar";
+            this.btnQuitarDestino.UseVisualStyleBackColor = true;
             // 
-            // nombreDataGridViewTextBoxColumn
+            // btnQuitarServicio
             // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.btnQuitarServicio.Location = new System.Drawing.Point(105, 300);
+            this.btnQuitarServicio.Name = "btnQuitarServicio";
+            this.btnQuitarServicio.Size = new System.Drawing.Size(75, 23);
+            this.btnQuitarServicio.TabIndex = 61;
+            this.btnQuitarServicio.Text = "Quitar";
+            this.btnQuitarServicio.UseVisualStyleBackColor = true;
             // 
-            // provinciaDataGridViewTextBoxColumn1
+            // label14
             // 
-            this.provinciaDataGridViewTextBoxColumn1.DataPropertyName = "_provincia";
-            this.provinciaDataGridViewTextBoxColumn1.HeaderText = "Provincia";
-            this.provinciaDataGridViewTextBoxColumn1.Name = "provinciaDataGridViewTextBoxColumn1";
-            this.provinciaDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(24, 535);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(80, 13);
+            this.label14.TabIndex = 62;
+            this.label14.Text = "Paso Fronterizo";
             // 
-            // paisDataGridViewTextBoxColumn
+            // cbPasoFronterizo
             // 
-            this.paisDataGridViewTextBoxColumn.DataPropertyName = "_pais";
-            this.paisDataGridViewTextBoxColumn.HeaderText = "Pais";
-            this.paisDataGridViewTextBoxColumn.Name = "paisDataGridViewTextBoxColumn";
-            this.paisDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cbPasoFronterizo.FormattingEnabled = true;
+            this.cbPasoFronterizo.Location = new System.Drawing.Point(115, 537);
+            this.cbPasoFronterizo.Name = "cbPasoFronterizo";
+            this.cbPasoFronterizo.Size = new System.Drawing.Size(219, 21);
+            this.cbPasoFronterizo.TabIndex = 63;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nombreDataGridViewTextBoxColumn1,
+            this.paisDataGridViewTextBoxColumn1});
+            this.dataGridView1.DataSource = this.pasoFronterizoBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(385, 535);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(354, 97);
+            this.dataGridView1.TabIndex = 64;
+            // 
+            // nombreDataGridViewTextBoxColumn1
+            // 
+            this.nombreDataGridViewTextBoxColumn1.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn1.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn1.Name = "nombreDataGridViewTextBoxColumn1";
+            // 
+            // paisDataGridViewTextBoxColumn1
+            // 
+            this.paisDataGridViewTextBoxColumn1.DataPropertyName = "pais";
+            this.paisDataGridViewTextBoxColumn1.HeaderText = "Pais";
+            this.paisDataGridViewTextBoxColumn1.Name = "paisDataGridViewTextBoxColumn1";
+            // 
+            // pasoFronterizoBindingSource
+            // 
+            this.pasoFronterizoBindingSource.DataSource = typeof(TrabajoPractico1.Modelo.PasoFronterizo);
+            // 
+            // btnAgregarPasoFronterizo
+            // 
+            this.btnAgregarPasoFronterizo.Location = new System.Drawing.Point(217, 589);
+            this.btnAgregarPasoFronterizo.Name = "btnAgregarPasoFronterizo";
+            this.btnAgregarPasoFronterizo.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregarPasoFronterizo.TabIndex = 65;
+            this.btnAgregarPasoFronterizo.Text = "Agregar";
+            this.btnAgregarPasoFronterizo.UseVisualStyleBackColor = true;
+            this.btnAgregarPasoFronterizo.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // btnQuitarPasoFronterizo
+            // 
+            this.btnQuitarPasoFronterizo.Location = new System.Drawing.Point(105, 589);
+            this.btnQuitarPasoFronterizo.Name = "btnQuitarPasoFronterizo";
+            this.btnQuitarPasoFronterizo.Size = new System.Drawing.Size(75, 23);
+            this.btnQuitarPasoFronterizo.TabIndex = 66;
+            this.btnQuitarPasoFronterizo.Text = "Quitar";
+            this.btnQuitarPasoFronterizo.UseVisualStyleBackColor = true;
             // 
             // VAgregarPaquete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(637, 568);
+            this.ClientSize = new System.Drawing.Size(769, 683);
+            this.Controls.Add(this.btnQuitarPasoFronterizo);
+            this.Controls.Add(this.btnAgregarPasoFronterizo);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.cbPasoFronterizo);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.btnQuitarServicio);
+            this.Controls.Add(this.btnQuitarDestino);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.cbHasta);
@@ -441,14 +543,14 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnAgregarServicio);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.tbServicios);
             this.Controls.Add(this.cbServicio);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.tbDestino);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAgregarDestino);
             this.Controls.Add(this.cbDestino);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.label8);
@@ -474,6 +576,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbDestino)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pasoFronterizoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -481,14 +585,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAgregarServicio;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView tbServicios;
         private System.Windows.Forms.ComboBox cbServicio;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView tbDestino;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAgregarDestino;
         private System.Windows.Forms.ComboBox cbDestino;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label8;
@@ -522,5 +626,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn provinciaDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn paisDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnQuitarDestino;
+        private System.Windows.Forms.Button btnQuitarServicio;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox cbPasoFronterizo;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paisDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.BindingSource pasoFronterizoBindingSource;
+        private System.Windows.Forms.Button btnAgregarPasoFronterizo;
+        private System.Windows.Forms.Button btnQuitarPasoFronterizo;
     }
 }
