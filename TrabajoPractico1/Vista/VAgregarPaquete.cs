@@ -21,8 +21,13 @@ namespace TrabajoPractico1.Vista
         {
             InitializeComponent();
             _presentador = new PresentadorPaquete(this);
-            _presentador.CrearPaquete();
+            _presentador.CrearNuevoPaquete();
             Iniciar();
+        }
+
+        public VAgregarPaquete(Paquete p)
+        {
+
         }
 
         private void Iniciar()
@@ -118,6 +123,15 @@ namespace TrabajoPractico1.Vista
         public void ActualizarTablaPasoFronterizo(PasoFronterizo p)
         {
             pasoFronterizoBindingSource.Add(p);
+        }
+
+        public void ModificarPaquete(Paquete p)
+        {
+            bindingSource1.Add(p);
+            pasoFronterizoBindingSource.Add(p.pasoFronterizo);
+            servicioPaqueteBindingSource.Add(p.serviciosPaquete);
+            ciudadBindingSource.Add(p.destino);
+            this.Show();
         }
     }
 }

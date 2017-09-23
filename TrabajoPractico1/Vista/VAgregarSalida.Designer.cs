@@ -51,7 +51,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 140);
+            this.label1.Location = new System.Drawing.Point(12, 61);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 13);
             this.label1.TabIndex = 0;
@@ -60,7 +60,7 @@
             // cbPaquetes
             // 
             this.cbPaquetes.FormattingEnabled = true;
-            this.cbPaquetes.Location = new System.Drawing.Point(150, 132);
+            this.cbPaquetes.Location = new System.Drawing.Point(141, 53);
             this.cbPaquetes.Name = "cbPaquetes";
             this.cbPaquetes.Size = new System.Drawing.Size(121, 21);
             this.cbPaquetes.TabIndex = 1;
@@ -68,7 +68,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 55);
+            this.label2.Location = new System.Drawing.Point(12, 111);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 2;
@@ -77,7 +77,7 @@
             // dtFecha
             // 
             this.dtFecha.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSource1, "fecha", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "D"));
-            this.dtFecha.Location = new System.Drawing.Point(83, 49);
+            this.dtFecha.Location = new System.Drawing.Point(83, 105);
             this.dtFecha.Name = "dtFecha";
             this.dtFecha.Size = new System.Drawing.Size(200, 20);
             this.dtFecha.TabIndex = 3;
@@ -99,7 +99,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 97);
+            this.label4.Location = new System.Drawing.Point(12, 159);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 5;
@@ -108,7 +108,7 @@
             // tbCupos
             // 
             this.tbCupos.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "cupoSalida", true));
-            this.tbCupos.Location = new System.Drawing.Point(83, 90);
+            this.tbCupos.Location = new System.Drawing.Point(83, 156);
             this.tbCupos.Name = "tbCupos";
             this.tbCupos.Size = new System.Drawing.Size(100, 20);
             this.tbCupos.TabIndex = 6;
@@ -116,7 +116,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 186);
+            this.label5.Location = new System.Drawing.Point(12, 202);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 13);
             this.label5.TabIndex = 7;
@@ -126,7 +126,7 @@
             // 
             this.cbBase.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource2, "vase", true));
             this.cbBase.FormattingEnabled = true;
-            this.cbBase.Location = new System.Drawing.Point(150, 183);
+            this.cbBase.Location = new System.Drawing.Point(150, 199);
             this.cbBase.Name = "cbBase";
             this.cbBase.Size = new System.Drawing.Size(121, 21);
             this.cbBase.TabIndex = 8;
@@ -138,7 +138,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 228);
+            this.label6.Location = new System.Drawing.Point(12, 252);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(37, 13);
             this.label6.TabIndex = 9;
@@ -147,7 +147,7 @@
             // tbTarifa
             // 
             this.tbTarifa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource2, "precio", true));
-            this.tbTarifa.Location = new System.Drawing.Point(83, 225);
+            this.tbTarifa.Location = new System.Drawing.Point(83, 249);
             this.tbTarifa.Name = "tbTarifa";
             this.tbTarifa.Size = new System.Drawing.Size(100, 20);
             this.tbTarifa.TabIndex = 10;

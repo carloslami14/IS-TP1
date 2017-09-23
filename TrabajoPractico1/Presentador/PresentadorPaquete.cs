@@ -19,7 +19,18 @@ namespace TrabajoPractico1.Presentador
             this._vista = vista;
         }
 
-        public void CrearPaquete()
+        public PresentadorPaquete(Paquete p)
+        {
+            foreach (Paquete paquete in Repositorio.Repositorio.GetPaquetes())
+            {
+                if (paquete.Equals(p))
+                {
+                    _vista.ModificarPaquete(paquete);
+                }
+            }
+        }
+
+        public void CrearNuevoPaquete()
         {
             _paquete = new Paquete();
         }

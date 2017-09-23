@@ -22,9 +22,17 @@ namespace TrabajoPractico1.Presentador
             _vista.CargarTabla(Repositorio.Repositorio.GetPaquetes());
         }
 
-        public void ModificarPaquete(Paquete p)
+        public Paquete ModificarPaquete(Paquete p)
         {
+            foreach (Paquete pa in Repositorio.Repositorio.GetPaquetes())
+            {
+                if (pa.Equals(p))
+                {
+                    return pa;
+                }
+            }
 
+            return null;
         }
 
         public void DesactivarPaquete(Paquete p)
@@ -33,16 +41,31 @@ namespace TrabajoPractico1.Presentador
             {
                 if (pa.Equals(p))
                 {
-                    if (p.estado == EstadoPaquete.Activo)
+                    _vista.ModificarPaquete(pa.nombre);
+                }
+            }
+        }
+
+        public void GuardarPaquete(string nombre, int estado)
+        {
+            foreach (Paquete pa in Repositorio.Repositorio.GetPaquetes())
+            {
+                if (pa.nombre == nombre)
+                {
+                    switch (estado)
                     {
-                        pa.estado = EstadoPaquete.Inactivo;
-                        _vista.Notificar("Estado Modificado a Incativo");
-                        _vista.CargarTabla(Repositorio.Repositorio.GetPaquetes());
+                        case (int)EstadoPaquete.Activo:
+                            pa.estado = EstadoPaquete.Activo;
+                            break;
+                        case (int)EstadoPaquete.Creado:
+                            pa.estado = EstadoPaquete.Creado;
+                            break;
+                        case (int)EstadoPaquete.Inactivo:
+                            pa.estado = EstadoPaquete.Inactivo;
+                            break;
                     }
-                    else
-                    {
-                        _vista.Notificar("No se puede modificar estado. Paquete debe ser Activo");
-                    }
+                    _vista.CargarTabla(Repositorio.Repositorio.GetPaquetes());
+                    _vista.Notificar("Estado de Paquete Modificado");
                 }
             }
         }

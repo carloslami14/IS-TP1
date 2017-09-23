@@ -21,7 +21,7 @@ namespace TrabajoPractico1.Vista
         {
             InitializeComponent();
             _presentador = new PresentadorSalida(this);
-            _presentador.CrearSalida();
+            _presentador.CrearNuevaSalida();
             Iniciar();
         }
 
@@ -49,7 +49,7 @@ namespace TrabajoPractico1.Vista
 
         private void GuardarSalida()
         {
-            _presentador.GuardarSalida(bindingSource1.Current as Salida, cbPaquetes.Text, bindingSource2.Current as Tarifa);
+            _presentador.AgregarSalida(bindingSource1.Current as Salida, cbPaquetes.Text, bindingSource2.Current as Tarifa);
         }
     }
 }

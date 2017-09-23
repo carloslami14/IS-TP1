@@ -25,13 +25,13 @@ namespace TrabajoPractico1.Presentador
             _contador++;
         }
 
-        public void CrearSalida()
+        public void CrearNuevaSalida()
         {
             _salida = new Salida();
             _salida.estado = EstadoSalida.Creada;
         }
 
-        public void GuardarSalida(Salida salida, string paquete, Tarifa tar)
+        public void AgregarSalida(Salida salida, string paquete, Tarifa tar)
         {
             _salida = salida;
             _salida.numero = Repositorio.Repositorio.GetSalidas().Count + 1;

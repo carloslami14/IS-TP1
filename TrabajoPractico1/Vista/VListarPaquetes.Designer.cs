@@ -30,11 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.paqueteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itinerarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +38,12 @@
             this.cantNochesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.origenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paqueteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.flpModificarEstado = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paqueteBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -63,51 +64,8 @@
             this.dataGridView1.DataSource = this.paqueteBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 66);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(854, 257);
+            this.dataGridView1.Size = new System.Drawing.Size(854, 179);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(317, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Lista de Paquetes";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(772, 395);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Salir";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(701, 350);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Desactivar Paquete";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(552, 350);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(106, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Modificar Paquete";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // paqueteBindingSource
-            // 
-            this.paqueteBindingSource.DataSource = typeof(TrabajoPractico1.Modelo.Paquete);
             // 
             // nombreDataGridViewTextBoxColumn
             // 
@@ -157,11 +115,62 @@
             this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
             this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
             // 
+            // paqueteBindingSource
+            // 
+            this.paqueteBindingSource.DataSource = typeof(TrabajoPractico1.Modelo.Paquete);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(317, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Lista de Paquetes";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(790, 430);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Salir";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(710, 264);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Modificar Estado";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(572, 264);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(106, 23);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Modificar Paquete";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // flpModificarEstado
+            // 
+            this.flpModificarEstado.Location = new System.Drawing.Point(23, 283);
+            this.flpModificarEstado.Name = "flpModificarEstado";
+            this.flpModificarEstado.Size = new System.Drawing.Size(292, 170);
+            this.flpModificarEstado.TabIndex = 5;
+            // 
             // VListarPaquetes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(877, 434);
+            this.ClientSize = new System.Drawing.Size(877, 465);
+            this.Controls.Add(this.flpModificarEstado);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -193,5 +202,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn origenDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource paqueteBindingSource;
+        private System.Windows.Forms.FlowLayoutPanel flpModificarEstado;
     }
 }
