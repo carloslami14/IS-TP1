@@ -72,7 +72,7 @@ namespace TrabajoPractico1.Repositorio
             _servicios.Add(s1);
             _servicios.Add(s2);
 
-            Paquete paquete1 = new Paquete("Paquete1", "des", "itien", "cc", 2, 4, c1);
+            Paquete paquete1 = new Paquete(1,"Paquete1", "des", "itien", "cc", 2, 4, c1);
 
             _paquetes.Add(paquete1);
 

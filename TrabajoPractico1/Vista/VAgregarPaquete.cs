@@ -27,7 +27,11 @@ namespace TrabajoPractico1.Vista
 
         public VAgregarPaquete(Paquete p)
         {
-
+            InitializeComponent();
+            _presentador = new PresentadorPaquete(this);
+            Iniciar();
+            ModificarPaquete(p);
+            Show();
         }
 
         private void Iniciar()
@@ -127,11 +131,31 @@ namespace TrabajoPractico1.Vista
 
         public void ModificarPaquete(Paquete p)
         {
+            bindingSource1.Clear();
             bindingSource1.Add(p);
-            pasoFronterizoBindingSource.Add(p.pasoFronterizo);
-            servicioPaqueteBindingSource.Add(p.serviciosPaquete);
-            ciudadBindingSource.Add(p.destino);
-            this.Show();
+
+            cbOrigen.Text = p.origen.ToString();
+
+            pasoFronterizoBindingSource.Clear();
+            List<PasoFronterizo> pasos = p.pasoFronterizo;
+            for (int i=0; i<pasos.Count; i++)
+            {
+                pasoFronterizoBindingSource.Add(pasos[i]);
+            }
+
+            servicioPaqueteBindingSource.Clear();
+            List<ServicioPaquete> servicios = p.serviciosPaquete;
+            for (int i = 0; i < servicios.Count; i++)
+            {
+                servicioPaqueteBindingSource.Add(servicios[i]);
+            }
+
+            ciudadBindingSource.Clear();
+            List<Ciudad> destinos = p.destino;
+            for (int i = 0; i < destinos.Count; i++)
+            {
+                ciudadBindingSource.Add(destinos[i]);
+            }
         }
     }
 }

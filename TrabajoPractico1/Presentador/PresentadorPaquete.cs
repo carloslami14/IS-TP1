@@ -57,13 +57,41 @@ namespace TrabajoPractico1.Presentador
 
         public void AgregarPaquete(Paquete p, List<Ciudad> d, List<ServicioPaquete> s, string origen, List<PasoFronterizo> paso)
         {
-            _paquete = p;
-            _paquete.AgregarDestinos(d);
-            _paquete.estado = EstadoPaquete.Activo;
-            _paquete.AgregarServiciosPaquete(s);
-            _paquete.AgregarPasoFronterizo(paso);
-            _paquete.origen = BuscarCiudad(origen);
-            Repositorio.Repositorio.AgregarPaquete(_paquete);
+            bool bandera = false; //Para saber si es una agregacion o modificacion
+
+            foreach (Paquete pa in Repositorio.Repositorio.GetPaquetes())
+            {
+                if (pa.codigo == p.codigo)
+                {
+                    bandera = true;
+
+                    _paquete = p;
+                    _paquete.destino = null;
+                    _paquete.AgregarDestinos(d);
+                    _paquete.estado = EstadoPaquete.Activo;
+                    _paquete.serviciosPaquete = null;
+                    _paquete.AgregarServiciosPaquete(s);
+                    _paquete.pasoFronterizo = null;
+                    _paquete.AgregarPasoFronterizo(paso);
+                    _paquete.origen = BuscarCiudad(origen);
+                }
+                else
+                {
+                    bandera = false;
+                }
+            }
+
+            if (bandera == false)
+            {
+                _paquete = p;
+                _paquete.codigo = Repositorio.Repositorio.GetPaquetes().Count + 1;
+                _paquete.AgregarDestinos(d);
+                _paquete.estado = EstadoPaquete.Activo;
+                _paquete.AgregarServiciosPaquete(s);
+                _paquete.AgregarPasoFronterizo(paso);
+                _paquete.origen = BuscarCiudad(origen);
+                Repositorio.Repositorio.AgregarPaquete(_paquete);
+            }
         }
 
         public void AgregarDestino(string ciudad)

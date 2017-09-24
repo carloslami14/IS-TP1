@@ -13,16 +13,10 @@ namespace TrabajoPractico1.Presentador
     {
         private readonly IAgregarSalida _vista;
         private Salida _salida;
-        private int _contador = 0;
 
         public PresentadorSalida(IAgregarSalida vista)
         {
             this._vista = vista;
-        }
-
-        private void Contador()
-        {
-            _contador++;
         }
 
         public void CrearNuevaSalida()

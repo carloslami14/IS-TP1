@@ -10,6 +10,7 @@ namespace TrabajoPractico1.Modelo
     {
         public string nombre { get; set; }
         public Pais pais { get; set; }
+        public string _pais { get { return pais.nombre; } }
 
         public PasoFronterizo(string nombre, Pais pais)
         {
@@ -17,9 +18,10 @@ namespace TrabajoPractico1.Modelo
             this.pais = pais;
         }
 
+
         public override string ToString()
         {
-            return nombre + "," + pais.nombre;
+            return nombre + ", " + pais.nombre;
         }
     }
 }

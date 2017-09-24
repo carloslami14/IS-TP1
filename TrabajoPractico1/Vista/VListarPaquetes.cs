@@ -80,7 +80,7 @@ namespace TrabajoPractico1.Vista
 
         private void ModificarPaquete()
         {
-            new VAgregarPaquete(_presentador.ModificarPaquete(paqueteBindingSource.Current as Paquete)).Show();
+            new VAgregarPaquete(_presentador.ModificarPaquete(paqueteBindingSource.Current as Paquete));
         }
 
         private void DesactivarPaquete()

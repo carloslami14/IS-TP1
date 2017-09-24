@@ -8,6 +8,7 @@ namespace TrabajoPractico1.Modelo
 {
     public class Paquete
     {
+        public int codigo { get; set; }
         public string nombre { get; set; }
         public string descripcion { get; set; }
         public string itinerario { get; set; }
@@ -25,8 +26,9 @@ namespace TrabajoPractico1.Modelo
             estado = EstadoPaquete.Creado;
         }
 
-        public Paquete(string nombre, string descripcion, string itinerario, string cc, int cantDias, int cantNoches, Ciudad origen)
+        public Paquete(int codigo, string nombre, string descripcion, string itinerario, string cc, int cantDias, int cantNoches, Ciudad origen)
         {
+            this.codigo = codigo;
             this.nombre = nombre;
             this.descripcion = descripcion;
             this.itinerario = itinerario;
@@ -36,8 +38,9 @@ namespace TrabajoPractico1.Modelo
             this.origen = origen;
         }
 
-        public Paquete(string nombre, string descripcion, string itinerario, string cc, int cantDias, int cantNoches, Ciudad origen, List<Ciudad> destino, List<ServicioPaquete> servicioPaquete, List<PasoFronterizo> pasoFronterizo)
+        public Paquete(int codigo, string nombre, string descripcion, string itinerario, string cc, int cantDias, int cantNoches, Ciudad origen, List<Ciudad> destino, List<ServicioPaquete> servicioPaquete, List<PasoFronterizo> pasoFronterizo)
         {
+            this.codigo = codigo;
             this.nombre = nombre;
             this.descripcion = descripcion;
             this.itinerario = itinerario;
