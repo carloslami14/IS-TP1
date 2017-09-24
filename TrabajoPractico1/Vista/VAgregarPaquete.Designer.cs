@@ -35,12 +35,14 @@
             this.cbServicio = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.tbDestino = new System.Windows.Forms.DataGridView();
+            this.ciudadBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnAgregarDestino = new System.Windows.Forms.Button();
             this.cbDestino = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -65,28 +67,26 @@
             this.btnAgregarPasoFronterizo = new System.Windows.Forms.Button();
             this.btnQuitarPasoFronterizo = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.servicioPaqueteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pasoFronterizoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.desdeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hastaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.servicioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.servicioPaqueteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.provinciaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.paisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ciudadBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nombreDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.paisDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tbDestino)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicioPaqueteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pasoFronterizoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicioPaqueteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAgregarServicio
@@ -148,6 +148,10 @@
             this.tbDestino.Size = new System.Drawing.Size(354, 116);
             this.tbDestino.TabIndex = 43;
             // 
+            // ciudadBindingSource
+            // 
+            this.ciudadBindingSource.DataSource = typeof(TrabajoPractico1.Modelo.Ciudad);
+            // 
             // btnAgregarDestino
             // 
             this.btnAgregarDestino.Location = new System.Drawing.Point(217, 476);
@@ -200,6 +204,10 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(340, 45);
             this.textBox4.TabIndex = 37;
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(TrabajoPractico1.Modelo.Paquete);
             // 
             // label6
             // 
@@ -423,6 +431,10 @@
             this.dataGridView2.Size = new System.Drawing.Size(354, 116);
             this.dataGridView2.TabIndex = 67;
             // 
+            // servicioPaqueteBindingSource
+            // 
+            this.servicioPaqueteBindingSource.DataSource = typeof(TrabajoPractico1.Modelo.ServicioPaquete);
+            // 
             // textBox5
             // 
             this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource1, "cantDias", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
@@ -456,37 +468,33 @@
             // 
             this.pasoFronterizoBindingSource.DataSource = typeof(TrabajoPractico1.Modelo.PasoFronterizo);
             // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = typeof(TrabajoPractico1.Modelo.Paquete);
-            // 
             // desdeDataGridViewTextBoxColumn
             // 
             this.desdeDataGridViewTextBoxColumn.DataPropertyName = "desde";
             this.desdeDataGridViewTextBoxColumn.HeaderText = "Desde";
             this.desdeDataGridViewTextBoxColumn.Name = "desdeDataGridViewTextBoxColumn";
+            this.desdeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // hastaDataGridViewTextBoxColumn
             // 
             this.hastaDataGridViewTextBoxColumn.DataPropertyName = "hasta";
             this.hastaDataGridViewTextBoxColumn.HeaderText = "Hasta";
             this.hastaDataGridViewTextBoxColumn.Name = "hastaDataGridViewTextBoxColumn";
+            this.hastaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // servicioDataGridViewTextBoxColumn
             // 
             this.servicioDataGridViewTextBoxColumn.DataPropertyName = "servicio";
             this.servicioDataGridViewTextBoxColumn.HeaderText = "Servicio";
             this.servicioDataGridViewTextBoxColumn.Name = "servicioDataGridViewTextBoxColumn";
-            // 
-            // servicioPaqueteBindingSource
-            // 
-            this.servicioPaqueteBindingSource.DataSource = typeof(TrabajoPractico1.Modelo.ServicioPaquete);
+            this.servicioDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nombreDataGridViewTextBoxColumn
             // 
             this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
             this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // provinciaDataGridViewTextBoxColumn1
             // 
@@ -502,15 +510,12 @@
             this.paisDataGridViewTextBoxColumn.Name = "paisDataGridViewTextBoxColumn";
             this.paisDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // ciudadBindingSource
-            // 
-            this.ciudadBindingSource.DataSource = typeof(TrabajoPractico1.Modelo.Ciudad);
-            // 
             // nombreDataGridViewTextBoxColumn1
             // 
             this.nombreDataGridViewTextBoxColumn1.DataPropertyName = "nombre";
             this.nombreDataGridViewTextBoxColumn1.HeaderText = "Nombre";
             this.nombreDataGridViewTextBoxColumn1.Name = "nombreDataGridViewTextBoxColumn1";
+            this.nombreDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // paisDataGridViewTextBoxColumn1
             // 
@@ -568,12 +573,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Paquete";
             ((System.ComponentModel.ISupportInitialize)(this.tbDestino)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.servicioPaqueteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pasoFronterizoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.servicioPaqueteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -611,9 +616,6 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.BindingSource ciudadBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn provinciaDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn paisDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnQuitarDestino;
         private System.Windows.Forms.Button btnQuitarServicio;
         private System.Windows.Forms.Label label14;
@@ -622,14 +624,17 @@
         private System.Windows.Forms.Button btnQuitarPasoFronterizo;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn desdeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hastaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn servicioDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource servicioPaqueteBindingSource;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource pasoFronterizoBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn provinciaDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paisDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn desdeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hastaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn servicioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn paisDataGridViewTextBoxColumn1;
     }

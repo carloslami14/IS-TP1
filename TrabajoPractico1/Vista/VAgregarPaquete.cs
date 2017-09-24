@@ -114,21 +114,6 @@ namespace TrabajoPractico1.Vista
             _presentador.AgregarPaso(cbPasoFronterizo.SelectedItem.ToString().Split(',')[0]);
         }
 
-        public void ActualizarTablaDestino(Ciudad c)
-        {
-            ciudadBindingSource.Add(c);
-        }
-
-        public void ActualizarTablaServicio(ServicioPaquete s)
-        {
-            servicioPaqueteBindingSource.Add(s);
-        }
-
-        public void ActualizarTablaPasoFronterizo(PasoFronterizo p)
-        {
-            pasoFronterizoBindingSource.Add(p);
-        }
-
         public void ModificarPaquete(Paquete p)
         {
             bindingSource1.Clear();
@@ -138,7 +123,7 @@ namespace TrabajoPractico1.Vista
 
             pasoFronterizoBindingSource.Clear();
             List<PasoFronterizo> pasos = p.pasoFronterizo;
-            for (int i=0; i<pasos.Count; i++)
+            for (int i = 0; i < pasos.Count; i++)
             {
                 pasoFronterizoBindingSource.Add(pasos[i]);
             }
@@ -156,6 +141,21 @@ namespace TrabajoPractico1.Vista
             {
                 ciudadBindingSource.Add(destinos[i]);
             }
+        }
+
+        public void ActualizarTablaDestino(Ciudad c)
+        {
+            ciudadBindingSource.Add(c);
+        }
+
+        public void ActualizarTablaServicio(ServicioPaquete s)
+        {
+            servicioPaqueteBindingSource.Add(s);
+        }
+
+        public void ActualizarTablaPasoFronterizo(PasoFronterizo p)
+        {
+            pasoFronterizoBindingSource.Add(p);
         }
     }
 }

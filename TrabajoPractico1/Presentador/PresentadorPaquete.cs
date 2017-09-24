@@ -75,10 +75,6 @@ namespace TrabajoPractico1.Presentador
                     _paquete.AgregarPasoFronterizo(paso);
                     _paquete.origen = BuscarCiudad(origen);
                 }
-                else
-                {
-                    bandera = false;
-                }
             }
 
             if (bandera == false)

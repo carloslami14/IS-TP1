@@ -44,7 +44,7 @@ namespace TrabajoPractico1.Vista
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DesactivarPaquete();
+            ModificarEstadoPaquete();
         }
 
         private void btnGuardarEstado_Click(object sender, EventArgs e)
@@ -83,9 +83,9 @@ namespace TrabajoPractico1.Vista
             new VAgregarPaquete(_presentador.ModificarPaquete(paqueteBindingSource.Current as Paquete));
         }
 
-        private void DesactivarPaquete()
+        private void ModificarEstadoPaquete()
         {
-            _presentador.DesactivarPaquete(paqueteBindingSource.Current as Paquete);
+            _presentador.ModificarEstadoPaquete(paqueteBindingSource.Current as Paquete);
         }
 
         private void GuardarPaquete()

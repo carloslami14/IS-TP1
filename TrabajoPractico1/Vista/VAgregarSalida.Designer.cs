@@ -124,7 +124,7 @@
             // 
             // cbBase
             // 
-            this.cbBase.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource2, "vase", true));
+            this.cbBase.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSource2, "vase", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.cbBase.FormattingEnabled = true;
             this.cbBase.Location = new System.Drawing.Point(150, 199);
             this.cbBase.Name = "cbBase";

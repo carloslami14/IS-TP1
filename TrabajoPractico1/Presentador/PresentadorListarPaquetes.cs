@@ -35,7 +35,7 @@ namespace TrabajoPractico1.Presentador
             return null;
         }
 
-        public void DesactivarPaquete(Paquete p)
+        public void ModificarEstadoPaquete(Paquete p)
         {
             foreach (Paquete pa in Repositorio.Repositorio.GetPaquetes())
             {

@@ -25,6 +25,15 @@ namespace TrabajoPractico1.Vista
             Iniciar();
         }
 
+        public VAgregarSalida(Salida s)
+        {
+            InitializeComponent();
+            _presentador = new PresentadorSalida(this);
+            Iniciar();
+            ModificarSalida(s);
+            Show();
+        }
+
         private void Iniciar()
         {
             bindingSource1.DataSource = new Salida();
@@ -50,6 +59,18 @@ namespace TrabajoPractico1.Vista
         private void GuardarSalida()
         {
             _presentador.AgregarSalida(bindingSource1.Current as Salida, cbPaquetes.Text, bindingSource2.Current as Tarifa);
+        }
+
+        private void ModificarSalida(Salida s)
+        {
+            bindingSource1.Clear();
+            bindingSource1.Add(s);
+
+            bindingSource2.Clear();
+            bindingSource2.Add(s.tarifa);
+
+            cbPaquetes.Text = s.paquete.nombre;
+            cbBase.Tag = s.tarifa.vase;
         }
     }
 }

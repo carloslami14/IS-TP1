@@ -39,6 +39,19 @@ namespace TrabajoPractico1.Presentador
             _vista.CargarTabla(Repositorio.Repositorio.GetSalidas());
         }
 
+        public Salida ModificarSalida(Salida s)
+        {
+            foreach (Salida sa in Repositorio.Repositorio.GetSalidas())
+            {
+                if (sa.Equals(s))
+                {
+                    return sa;
+                }
+            }
+
+            return null;
+        }
+
         public void DesactivarSalida(Salida sal)
         {
             foreach (Salida a in Repositorio.Repositorio.GetSalidas())

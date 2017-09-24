@@ -40,9 +40,9 @@ namespace TrabajoPractico1.Vista
             DesactivarPaquete();
         }
 
-        private void DesactivarPaquete()
+        private void button2_Click(object sender, EventArgs e)
         {
-            _presentador.DesactivarSalida(salidaBindingSource.Current as Salida);
+            ModificarSalida();
         }
 
         public void CargarTabla(List<Salida> salidas)
@@ -52,6 +52,17 @@ namespace TrabajoPractico1.Vista
             {
                 salidaBindingSource.Add(s);
             }
+        }
+
+        private void DesactivarPaquete()
+        {
+            _presentador.DesactivarSalida(salidaBindingSource.Current as Salida);
+        }
+
+        private void ModificarSalida()
+        {
+            new VAgregarSalida(_presentador.ModificarSalida(salidaBindingSource.Current as Salida));
+
         }
 
         public void Notificar(string mensaje)
